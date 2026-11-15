@@ -437,3 +437,185 @@ provisioning o modifica ai servizi Cloudflare. Commit/push sul branch corrente,
 con firma GPG disattivata soltanto per ciascun comando commit.
 Server Wrangler della sessione arrestato al termine; nessun processo locale
 lasciato in esecuzione da questa attività.
+
+## 2026-11-15 — Milestone 4A e ripresa esclusiva Playwright
+
+### Risultato e perimetro
+
+Collaudata la build Qwik City SSR con Wrangler locale, senza pubblicazione.
+Corrette due anomalie circoscritte del questionario: focus sugli elementi
+condizionali ed etichetta del pulsante durante la modifica dal riepilogo.
+Nessun restyling, nuova funzione, dipendenza o modifica alle specifiche.
+
+La successiva richiesta di esecuzione Playwright esclusiva ha limitato la ripresa
+ai controlli mancanti. Non sono state ripetute le 40 combinazioni delle pagine
+già esaminate. Completati i passaggi intermedi responsive e la sequenza da
+tastiera con copia/reset. Rimane non conclusivo un click automatizzato a 320 px:
+il risultato parziale è conservato, non dichiarato interamente superato.
+
+| Controllo | Esito effettivo ed evidenza |
+| --- | --- |
+| Typecheck strict e lint | Superati dopo le correzioni; lint senza warning |
+| Unit test e DOM Qwik | 27 test superati in 3 file |
+| Build di produzione | Superata: client, server SSR, tipi e lint |
+| HTTP senza JavaScript client | 11 test superati: nove rotte, artefatti e 404 |
+| Pagine responsive | Home, Studio, Servizi, Portfolio, Contatti, Richiedi un progetto, tre schede e 404 esaminate a 1440/768/390/320 px; nessun overflow riprodotto, H1 unico, immagini caricate dopo scroll |
+| Contrasto HTML e menu | Report layout superato su 40 combinazioni; menu con Enter/Tab/Escape a 768/390/320, destinazione Servizi e FAQ con Enter |
+| Questionario nella ripresa esclusiva | 37 controlli superati prima del timeout dell'azione mouse; report complessivo correttamente `failed` |
+| Tastiera, copia e reset a 320 px | Report separato `passed`, 8 controlli; tutti i passaggi raggiunti con Tab/Space/frecce/Enter, nessun invio mutante all'origine locale o pageerror |
+| Clipboard | writeText reale risolto positivamente; negazione simulata separatamente, testo completo selezionabile e focus verificati. Nessuna rilettura dagli appunti del sistema |
+| Audit dipendenze | 12 pacchetti segnalati: 4 high, 8 moderate, 0 critical. Nessun aggiornamento forzato; analisi in DEPENDENCY_AUDIT |
+
+I numeri del browser sono asserzioni dell'harness, non test Vitest aggiuntivi.
+Non si sommano le esecuzioni ripetute per presentare un unico test interamente
+verde. Il dettaglio è in [evidence/4a/README.md](evidence/4a/README.md).
+
+### Controlli iniziali e continuità Git
+
+Letti AGENTS, MVP, BRAND_DIRECTION e documentazione esistente. All'inizio della
+4A il working tree era pulito, sul branch feature/mvp-foundation; HEAD e remoto
+coincidevano a `698f1a1548b1336d18f40201a8ffd25b72ac1994` (milestone 3).
+Verificati con `git status --short --branch`, `git rev-parse HEAD` e
+`git ls-remote origin refs/heads/feature/mvp-foundation`.
+
+Alla ripresa esclusiva il working tree conteneva le modifiche di questa stessa
+4A non ancora committate: sono state preservate. Nessun cambio branch, subagente,
+worktree, merge o rebase. AGENTS.md, docs/MVP.md, package.json e lockfile invariati.
+
+### Difetti applicativi riprodotti e correzioni
+
+1. Continua senza risposte mostrava role=alert, ma document.activeElement restava
+   sul pulsante Continua. Il requestAnimationFrame poteva anticipare il rendering
+   Qwik dell'elemento condizionale. Sostituito con richiesta di focus via signal
+   e un useVisibleTask$ dopo il rendering; stesso meccanismo per conferma/reset
+   e titolo dei passaggi. Il segnale iniziale è vuoto: nessun focus rubato al
+   caricamento. Eccezione ESLint limitata a quell'effetto DOM; compromesso sul
+   caricamento client documentato in ARCHITECTURE. Verificati focus errori,
+   Mantieni le risposte e ritorno al comando di reset nel browser reale.
+2. Modifica Intervento e immobile tornava ai campi corretti, ma il pulsante
+   manteneva il testo Continua pur confermando direttamente la revisione.
+   Aggiunta una key per passaggio/modalità al pulsante primario. Il controllo
+   browser per nome accessibile Conferma la modifica ora raggiunge la revisione
+   aggiornata (95,50 → 95,5 m²), senza ripetere i passaggi successivi.
+3. Rimossi dai test DOM gli stub requestAnimationFrame non più utilizzati.
+   I test DOM continuano a simulare Clipboard e non sostituiscono le prove browser.
+
+Nessun cambiamento ulteriore al codice applicativo durante la ripresa esclusiva.
+Non ripetuti typecheck, lint, 27 test e build già superati sulla stessa versione
+applicativa: modificati soltanto harness e documentazione. Rieseguiti con esito
+positivo `node --check` sui due harness, `npm run fmt.check` e `git diff --check`.
+
+### Operazioni locali e comandi
+
+Baseline Node 22.16.0, npm 10.9.2; dipendenze già installate e invariate.
+Eseguiti nella 4A, prima e dopo le correzioni secondo necessità:
+
+```powershell
+npm run typecheck
+npm run lint
+npm test
+npm run fmt
+npm run build
+npm run fmt.check
+npm run serve
+npm run test.ssr
+npm audit --json
+npm ls sharp zod minimatch vite-imagetools
+npm explain sharp --json
+```
+
+Wrangler 4.162.0, origine 127.0.0.1:8794, compatibility date 2026-11-15 e
+nodejs_als, script serve esistente. Nessun --remote o login. Prima della ripresa
+Playwright verificata via Invoke-WebRequest la rotta /richiedi-un-progetto/:
+HTTP 200, contenuti Studio Forma e Intervento e immobile nell'HTML.
+Riutilizzato il runtime di questa sessione, senza creare un'istanza concorrente.
+
+Durante le ricostruzioni sono rimasti due processi Wrangler figli dopo la
+chiusura del wrapper PowerShell con Ctrl+C. Individuati tramite porta, PID,
+parentela e comando contenente il percorso esatto di questo repository;
+arrestati soltanto gli alberi identificati come avviati da questa attività.
+Il runtime finale è stato avviato a build conclusa e controllato sulla porta del
+progetto. Nessun processo browser condiviso terminato,
+riavviato o riconfigurato. La procedura ordinaria è aggiornata in DEPLOYMENT.
+
+Gli harness ricevono una Page Playwright, creano una scheda propria e la chiudono
+in finally. Nella ripresa controllati origine, pathname e viewport prima delle
+sequenze. La prima esecuzione mirata usa skipPublicPages; quella successiva
+keyboardOnly. Nessun browser o pacchetto di automazione installato nel progetto.
+La VM MCP non supporta import dinamici: eseguito il corpo delle funzioni, con
+percorso catture locale; report restituiti salvati dal processo Node locale.
+
+### Prove funzionali e visuali
+
+Verificati errori iniziali e focus, radio con frecce, campo caratteristiche sotto
+il minimo e al massimo di 400, superfici 0/-1/100001/1e2/95,123 rifiutate,
+0,01 e 100000 accettate, conservazione avanti/indietro, obiettivi/stile richiesti,
+budget omesso, tempi richiesti, descrizione 19 rifiutata/20 accettata e massimo
+2000. Riepilogo modificabile, budget presente, normalizzazione della superficie
+e testo contenente markup reso letterale senza esecuzione di script.
+
+Passaggi obiettivi, risorse, riepilogo e documento finale senza overflow ai
+quattro viewport. Catture rappresentative desktop/mobile di home, archivio,
+scheda, Studio, Servizi, Contatti, stati del questionario e copia manuale.
+Ispezionate anche le composizioni delle dieci pagine ai quattro viewport tramite
+catture locali di confronto; nel repository conservata una selezione di 20 PNG
+più la cattura diagnostica del click non conclusivo. Testo libero lungo senza
+spazi contenuto correttamente nel riepilogo.
+
+La prova esclusiva da tastiera a 320 px completa tutti i passaggi, copia,
+fallback su rifiuto simulato, selezione integrale, reset annullato e confermato,
+focus e perdita dello stato al reload. Nessuna richiesta non-GET/HEAD all'origine
+locale durante tale prova. L'osservazione non riguarda tutto il traffico del
+browser host, che può includere estensioni o software esterno all'applicazione.
+
+### Problemi dell'automazione distinti dai difetti applicativi
+
+- Un'immagine lazy non è necessariamente decodificata al primo load della pagina:
+  il controllo dell'harness ora include lo scroll prima di verificarla.
+- Alcune asserzioni immediate dopo input/click correvano prima del rendering
+  reattivo. Aggiunte attese sulla condizione DOM attesa, senza timeout arbitrari
+  o modifica delle regole di validazione. Il menu attende anche il nav visibile
+  prima del Tab, non soltanto aria-expanded.
+- L'ultimo tentativo generale precedente all'esclusività si è fermato su
+  scrollIntoViewIfNeeded della tavola Officina 02: attesa di stabilità di circa
+  8 secondi. Conservato browser-attempt-before-exclusivity.json, con 27 delle
+  40 combinazioni raggiunte. Non conteggiato come esecuzione generale superata.
+- Nella ripresa esclusiva browser-report.json raggiunge 37 controlli e si ferma
+  su Copia il brief a 320 px: locator.click, attesa visible/enabled/stable,
+  timeout 8000 ms. Il pulsante è presente nella cattura; causa dell'attesa non
+  accertata. Non è stato ripetuto o forzato quel click. La distinta modalità
+  tastiera conclude copia e reset, come documentato in keyboard-report.json.
+- Questi sono timeout di azione con servizio MCP che restituisce un risultato,
+  non i timeout tools/call da 300 secondi della milestone 3. Nessun pageerror
+  rilevato nelle prove del questionario. Non attribuita senza prova la causa
+  ad altre sessioni o a un difetto CSS; nessuna correzione speculativa.
+
+### Audit e documentazione
+
+Creati CONTENT_AUDIT per tutte le pagine e DEPENDENCY_AUDIT per catene Sharp,
+Zod e Minimatch. Priorità editoriale: ulteriori tavole esplicative nelle tre
+schede, metodo dimostrato con un caso, CTA del brief più uniformi; proposte
+registrate, non implementate. Analizzati 68 moduli JS finali client/server e
+registrati hash/import/marcatori: nessun marcatore dei tre pacchetti rilevato.
+Analisi statica circoscritta, non attestazione di assenza di vulnerabilità.
+README, ARCHITECTURE, DEPLOYMENT e CASE_STUDY aggiornati mantenendo lo storico.
+
+### Residui e chiusura
+
+Restano: eventuale prova manuale del click mouse/touch a 320 px nel browser
+desiderato, incolla in un editor per rileggere gli appunti, screen reader e
+compatibilità Safari/Firefox. Il contrasto HTML calcolato non include testi negli
+SVG, bordi, pseudo-elementi o tutti gli stati dinamici; nessuna certificazione
+WCAG. Advisory dipendenze ancora aperti, da rivalutare prima di pubblicare.
+
+Chiuse le schede create in esclusiva e rilasciato Playwright MCP al termine
+delle prove; nessuna ulteriore chiamata browser durante documentazione e Git.
+Arrestato l'albero del runtime avviato nella ripresa (root Node 64300, CLI 32000),
+verificandone comando e parentela prima della chiusura. Dopo l'arresto sulla
+porta 8794 risulta ancora un'istanza precedente dello stesso repository
+(workerd 45416, parent 64924, avvio 17:01): proprietà non accertata, quindi non
+terminata. Non vengono dichiarati spenti tutti i processi del repository.
+Nessun intervento su browser o altri progetti. Commit e push sul solo branch corrente
+con `git -c commit.gpgsign=false commit`, senza modificare la configurazione Git.
+Nessun merge, rebase, force push, deployment o modifica a servizi Cloudflare.
+Non avviate attività successive alla 4A.

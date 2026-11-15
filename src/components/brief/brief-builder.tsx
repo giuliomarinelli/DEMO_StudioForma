@@ -1,4 +1,10 @@
-import { $, component$, useSignal, useStore } from "@builder.io/qwik";
+import {
+  $,
+  component$,
+  useSignal,
+  useStore,
+  useVisibleTask$,
+} from "@builder.io/qwik";
 import { Arrow } from "../ui/arrow";
 import { ChoiceGroup } from "./choice-group";
 import {
@@ -40,6 +46,28 @@ export const BriefBuilder = component$(() => {
   const manualText = useSignal<HTMLTextAreaElement>();
   const resetButton = useSignal<HTMLButtonElement>();
   const keepButton = useSignal<HTMLButtonElement>();
+  const focusRequest = useSignal<{
+    target: "heading" | "errors" | "keep" | "reset";
+  }>();
+
+  // Conditional error/reset elements must exist before focus is applied.
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(
+    ({ track }) => {
+      const request = track(() => focusRequest.value);
+      if (!request) return;
+      const target =
+        request.target === "errors"
+          ? errorSummary.value
+          : request.target === "keep"
+            ? keepButton.value
+            : request.target === "reset"
+              ? resetButton.value
+              : heading.value;
+      target?.focus();
+    },
+    { strategy: "document-ready" },
+  );
 
   const clearErrors$ = $(() => {
     for (const field of Object.keys(errors) as (keyof BriefAnswers)[])
@@ -52,12 +80,12 @@ export const BriefBuilder = component$(() => {
     generated.value = false;
     confirmReset.value = false;
     step.value = target;
-    requestAnimationFrame(() => heading.value?.focus());
+    focusRequest.value = { target: "heading" };
   });
   const showErrors$ = $(async (nextErrors: BriefErrors) => {
     await clearErrors$();
     Object.assign(errors, nextErrors);
-    requestAnimationFrame(() => errorSummary.value?.focus());
+    focusRequest.value = { target: "errors" };
   });
   const advance$ = $(async () => {
     if (step.value === 3) {
@@ -74,7 +102,7 @@ export const BriefBuilder = component$(() => {
       await clearErrors$();
       generated.value = true;
       copyStatus.value = "idle";
-      requestAnimationFrame(() => heading.value?.focus());
+      focusRequest.value = { target: "heading" };
       return;
     }
     const nextErrors = validateBriefStep(answers, step.value);
@@ -155,7 +183,7 @@ export const BriefBuilder = component$(() => {
           class="brief-reset-link"
           onClick$={() => {
             confirmReset.value = true;
-            requestAnimationFrame(() => keepButton.value?.focus());
+            focusRequest.value = { target: "keep" };
           }}
         >
           Ricomincia da zero
@@ -187,7 +215,7 @@ export const BriefBuilder = component$(() => {
                 class="button button-outline"
                 onClick$={() => {
                   confirmReset.value = false;
-                  resetButton.value?.focus();
+                  focusRequest.value = { target: "reset" };
                 }}
               >
                 Mantieni le risposte
@@ -617,6 +645,7 @@ export const BriefBuilder = component$(() => {
               </button>
             )}
             <button
+              key={`${step.value}-${editing.value ? "edit" : "advance"}`}
               type="button"
               class="button button-dark"
               onClick$={advance$}

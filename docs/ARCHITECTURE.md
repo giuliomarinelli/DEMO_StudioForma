@@ -1,6 +1,6 @@
 # Architettura — Studio Forma
 
-## Perimetro dopo la milestone 3
+## Perimetro dopo la milestone 4A
 
 Applicazione Qwik City con rendering server a ogni richiesta alle pagine pubbliche.
 Lo studio, i tre progetti concettuali e i servizi sono fittizi. La milestone 2
@@ -77,8 +77,9 @@ I collegamenti sono normali anchor con URL reali: funzionano con navigazione HTT
 e non richiedono un router SPA. Il menu mobile usa `component$`, `useSignal` e
 gestori `$`; `Escape` lo chiude e riporta il focus al pulsante. È un disclosure
 inline, non un dialogo modale. La navigazione a piè di pagina resta disponibile
-anche senza JavaScript. Non sono usati `useVisibleTask$`, persistenza o richieste
-verso servizi terzi nel codice applicativo.
+anche senza JavaScript. Non sono usate persistenza o richieste verso servizi
+terzi nel codice applicativo. La milestone 4A aggiunge un solo `useVisibleTask$`
+al questionario per applicare il focus dopo il rendering degli elementi condizionali.
 
 ## SEO e accessibilità iniziale
 
@@ -154,6 +155,17 @@ un invio nativo, neppure con Enter o JavaScript disattivato. Tutti i pulsanti so
 type=button; noscript spiega il requisito JavaScript. La pagina e le altre rotte
 restano SSR. Il reset e gli errori hanno gestione esplicita del focus.
 
+Il collaudo 4A ha riprodotto un focus perso: requestAnimationFrame poteva precedere
+l'inserimento del riepilogo errori o della conferma di reset. Un segnale di richiesta
+del focus è ora osservato da un `useVisibleTask$` dopo il rendering. Nessun focus
+automatico all'apertura: il segnale iniziale è vuoto. L'effetto richiede codice
+client all'avvio del questionario; è un compromesso circoscritto per la gestione
+DOM, con eccezione ESLint locale e motivata, senza disabilitare la regola globale.
+Riferimento: [ciclo dei task Qwik](https://qwik.dev/docs/core/tasks/).
+La chiave del pulsante primario distingue passaggio/modalità di modifica: evita
+il riuso del testo “Continua” osservato al ritorno dal riepilogo, pur con la
+conferma già operativa. La regressione è verificata sulla build SSR nel browser.
+
 Copia con navigator.clipboard.writeText, solo dopo azione dell'utente. Errori o API
 assente mostrano una textarea readonly con il testo completo e il comando per
 selezionarlo. Il successo viene annunciato soltanto dopo la risoluzione della
@@ -175,3 +187,7 @@ override a major incompatibili di Zod o downgrade di Qwik City suggeriti da
 Zod o dati esterni è presente nella milestone. Prima di un deploy va rivalutata la
 catena dipendenze; la classificazione `devDependency` non basta a stabilire se un
 modulo finisce nel worker.
+
+L'analisi aggiornata di catene, artefatti e rischio residuo è in
+[DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md). Gli harness browser in `tests/` ricevono
+una Page Playwright dall'ambiente di test; non aggiungono dipendenze applicative.

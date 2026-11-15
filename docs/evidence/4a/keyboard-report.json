@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "origin": "http://127.0.0.1:8794",
+  "scope": "keyboard-copy-reset-only",
+  "viewports": [],
+  "checks": [
+    "Dedicated project URL and viewport verified",
+    "Keyboard-only: Tab/Space/arrows/Enter complete all four steps",
+    "Keyboard-only: denied clipboard exposes full selectable document",
+    "Keyboard-only: reset cancellation preserves document and returns focus",
+    "Keyboard-only: confirmed reset restores initial state",
+    "Reload discards in-page answers",
+    "No non-GET/HEAD requests during browser audit",
+    "No pageerror during browser audit"
+  ],
+  "clipboard": {
+    "nativeStatus": "Brief copiato negli appunti. Nessuna richiesta è stata inviata.",
+    "roundTripRead": false
+  },
+  "errors": [],
+  "mutations": [],
+  "screenshots": [
+    "brief-copy-fallback-320.png"
+  ]
+}

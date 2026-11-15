@@ -6,6 +6,8 @@ Rappresentare uno studio di architettura contemporanea, rigoroso e sperimentale
 attraverso un archivio editoriale di progetti fittizi. La milestone 1 ha preparato
 Qwik City SSR e la struttura del sito. La milestone 2 completa identità e contenuti.
 La milestone 3 aggiunge il generatore di brief, con stato locale e nessun invio.
+La milestone 4A collauda la build SSR nel runtime Cloudflare locale e corregge
+focus del questionario e testo del pulsante di conferma in modifica.
 
 ## Evoluzione dell'identità
 
@@ -64,19 +66,24 @@ I dati dei progetti sono locali e tipizzati; due componenti condivisi servono
 archivio e schede. Non sono state aggiunte dipendenze, API business o servizi. Validazioni e formato
 del documento sono separati dal componente Qwik e verificati con test locali.
 
-TypeScript strict, ESLint Qwik, test della navigazione e test HTTP del worker
-locale verificano l'implementazione. Le catture desktop/mobile di archivio,
-scheda e facsimile documentano la milestone 2. Il controllo browser della
-milestone 3 è bloccato da due timeout del servizio Playwright MCP; non sono
-attestati focus, resa visuale o copia reale negli appunti. I test del componente
-Qwik non eseguono il focus e simulano la Clipboard API. Esiti, comandi e catture sono nel
-[WORKLOG.md](WORKLOG.md). I risultati locali non attestano un deploy remoto,
-prestazioni misurate o conformità WCAG completa.
+TypeScript strict, ESLint Qwik, 27 test unitari/DOM e 11 test HTTP del worker
+locale verificano l'implementazione. Nella 4A il browser è disponibile: nove
+rotte più 404 controllate ai quattro viewport, menu mobile, FAQ e percorso reale
+del questionario, anche interamente da tastiera. Screenshot iniziali, errori,
+riepilogo e risultato sono in [evidence/4a](evidence/4a/). Il focus perso sugli
+elementi condizionali è stato corretto con un effetto Qwik dopo il rendering.
+La scrittura Clipboard ha restituito successo; non è stata riletta dagli appunti
+del sistema. Il rifiuto dei permessi è simulato separatamente per verificare la
+copia manuale. Il blocco browser della milestone 3 resta nel registro storico.
+Esiti e limiti sono nel [WORKLOG.md](WORKLOG.md). I risultati locali non attestano
+deploy remoto, prestazioni misurate, Safari/Firefox o conformità WCAG completa.
 
 ## Attività residue
 
-Funzionalità della milestone 3 implementate; resta la verifica browser
-bloccata dal servizio MCP. Milestone 4:
-audit esteso di accessibilità, compatibilità browser e preparazione finale al
-deploy. Gli advisory della catena dipendenze già registrati nella foundation
-restano da rivalutare prima di pubblicare. La milestone 4 non è stata avviata.
+Prove disponibili della 4A concluse; resta non conclusivo il click automatizzato
+su Copia a 320 px per attesa di stabilità, mentre la copia da tastiera riesce.
+Restano inoltre prove assistive con screen reader e browser diversi,
+eventuale arricchimento delle tavole e armonizzazione editoriale delle CTA:
+[CONTENT_AUDIT.md](CONTENT_AUDIT.md). Gli advisory sono ancora presenti, con catene
+e rilevanza documentate in [DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md).
+Nessun aggiornamento forzato, pubblicazione o avvio automatico di ulteriori milestone.

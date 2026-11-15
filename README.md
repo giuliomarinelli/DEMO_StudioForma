@@ -1,6 +1,6 @@
 # Studio Forma
 
-Demo di uno studio di architettura fittizio. Milestone 3: generatore interattivo di brief
+Demo di uno studio di architettura fittizio. Milestone 4A: collaudo del generatore di brief
 architettonici, identità grafite/cemento/blu e tre schede di progetto concettuale.
 Studio, contenuti e operazioni sono simulati; nessuna richiesta viene inviata.
 
@@ -74,7 +74,10 @@ sessionStorage o database. La copia richiede il supporto/permesso Clipboard del
 browser; se negato compare un testo selezionabile da copiare manualmente.
 
 L'audit npm segnala advisory transitivi dello stack stabile: dettaglio e limiti
-in [WORKLOG](docs/WORKLOG.md). La consegna non è una certificazione di sicurezza
+in [DEPENDENCY_AUDIT](docs/DEPENDENCY_AUDIT.md). Il collaudo sulla build SSR locale
+copre nove rotte più 404 a 1440/768/390/320 px, percorso reale e tastiera.
+Catture e report sono in [evidence/4a](docs/evidence/4a/); proposte editoriali in
+[CONTENT_AUDIT](docs/CONTENT_AUDIT.md). La consegna non è una certificazione di sicurezza
 o accessibilità né una pubblicazione remota.
 
 ## Documentazione
@@ -85,6 +88,8 @@ o accessibilità né una pubblicazione remota.
 - [Comandi, artefatti, riproduzione e rollback](docs/DEPLOYMENT.md)
 - [Decisioni, operazioni e risultati delle verifiche](docs/WORKLOG.md)
 - [Caso studio e attività residue](docs/CASE_STUDY.md)
+- [Audit dei contenuti per pagina](docs/CONTENT_AUDIT.md)
+- [Rilevanza degli advisory e rischio residuo](docs/DEPENDENCY_AUDIT.md)
 
 Git flow: `develop` integra, `preview` è staging, `master` è produzione.
 Questa milestone è su `feature/mvp-foundation`, senza merge o rebase. Deploy,

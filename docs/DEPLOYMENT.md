@@ -91,6 +91,10 @@ un'origine remota per questi controlli. Arrestare il server con Ctrl+C.
   l'assenza di `dist/index.html` proteggono il requisito SSR pubblico.
 - Gli advisory transitivi rimasti sono elencati nel worklog. Non eseguire
   `npm audit fix --force` senza una verifica di compatibilità.
+- Fermare Wrangler prima di ricostruire e riavviarlo dopo la build: durante la
+  cancellazione temporanea di dist può continuare a servire il worker precedente.
+  Per confrontare correzioni e screenshot non affidarsi a una ricompilazione
+  mentre il vecchio runtime è ancora acceso.
 
 ## Futuro hosting, riservato al proprietario
 
@@ -149,3 +153,69 @@ via SSR e nessun invio nativo è possibile anche senza JavaScript.
 
 Baseline per confrontare la milestone 3: commit caad2a4. Nessun rollback o
 pubblicazione eseguiti. Il report dei controlli effettivi è nel worklog.
+
+## Collaudo browser riproducibile / milestone 4A
+
+Dopo build e avvio di Wrangler aprire http://127.0.0.1:8794. Ripetere per tutte le
+nove rotte elencate nel README e per /pagina-inesistente/ a 1440, 768, 390 e
+320 px, zoom 100%. Scorrere fino al footer per attivare anche le immagini lazy.
+Controllare assenza di scorrimento orizzontale, titoli integri, testi leggibili,
+immagini caricate, spaziature, ordine dei contenuti e destinazioni dei link.
+
+Su mobile aprire Menu con Enter, Tab al primo link, Escape e ritorno del focus
+al pulsante; riaprire e seguire Servizi. In Contatti aprire le FAQ con Enter.
+Usare Tab iniziale e Vai al contenuto per raggiungere il main.
+
+Per il brief seguire la procedura precedente e provare anche:
+
+- Superfici 0, -1, 100001, 1e2, 95,123 rifiutate; 0,01 e 100000 accettate.
+- Caratteristiche di 9 caratteri rifiutate, 10 accettate; massimo 400.
+  Descrizione 19 rifiutata, 20 accettata; massimo 2000. Provare soli spazi.
+- Nessun obiettivo/stile/tempo: errore comprensibile, aria-invalid e focus al
+  riepilogo. Radio con frecce, checkbox con Space, pulsanti con Enter.
+- Modifica dal riepilogo: pulsante Conferma la modifica e ritorno diretto alla
+  revisione. Verificare che tutte le risposte modificate compaiano nel documento.
+- Tutti i passaggi e documento finale nei quattro viewport, testo lungo incluso.
+- Reset: focus iniziale su Mantieni le risposte; annullamento conserva i dati,
+  conferma azzera e riporta al titolo iniziale. Reload elimina lo stato.
+- In DevTools Network controllare che le risposte non producano POST, query URL
+  o invii; il caricamento dei chunk Qwik tramite GET è normale.
+
+Gli harness `tests/browser-audit.mjs` e `tests/browser-layout-audit.mjs` esportano
+`runBrowserAudit(page)` e `runLayoutAudit(page)` per un host Playwright già
+disponibile. Creano e chiudono soltanto una propria scheda, scrivono report e
+catture in docs/evidence/4a e non installano browser o pacchetti. Esempio per un
+host Node ESM che fornisce una Page:
+
+```js
+import { runBrowserAudit } from './tests/browser-audit.mjs';
+import { runLayoutAudit } from './tests/browser-layout-audit.mjs';
+const brief = await runBrowserAudit(page);
+const layout = await runLayoutAudit(page);
+if (brief.status !== 'passed' || layout.status !== 'passed') {
+  throw new Error('Collaudo non superato: leggere i report');
+}
+```
+
+Per riprendere solo il questionario senza ripetere le pagine già verificate,
+usare `runBrowserAudit(page, { skipPublicPages: true })`. Per il percorso da
+tastiera, copia e reset a 320 px usare `runBrowserAudit(page, { keyboardOnly: true })`:
+scrive keyboard-report.json separato. Nella ripresa esclusiva della 4A il primo
+report contiene 37 controlli superati e un timeout di azione sul click Copia;
+il secondo è interamente superato. Non rietichettare il primo come passed.
+
+Nella sessione 4A l'host MCP non supporta import dinamici nel suo contesto VM:
+è stato eseguito il corpo delle stesse funzioni, fornendo origine e percorso
+catture; i report restituiti sono stati salvati dal processo locale. Questa
+limitazione dell'host non richiede modifiche alle dipendenze del progetto.
+Se il servizio browser non risponde, fermarsi al primo blocco e usare la checklist
+manuale; non dichiarare superati controlli non eseguiti. Salvare esiti e catture
+con data, browser e viewport. Un timeout di un'asserzione con browser operativo
+va distinto dall'indisponibilità del servizio.
+
+Il controllo cromatico dell'harness considera testo HTML visibile e fondi CSS
+uniformi, con composizione alpha e soglie 4,5:1/3:1. Esclude SVG/immagini e non
+valuta pseudo-elementi, gradienti, bordi dei controlli o tutti gli stati dinamici:
+non sostituisce un audit WCAG. La copia positiva conferma writeText, non una
+rilettura degli appunti; verificare manualmente l'incolla nell'editor desiderato.
+Baseline rollback 4A: `698f1a1`; nessun rollback effettuato.

@@ -1,0 +1,1493 @@
+{
+  "status": "failed",
+  "origin": "http://127.0.0.1:8794",
+  "viewports": [
+    {
+      "path": "/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Studio Forma — Architettura, materia, metodo",
+      "words": 219,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Spazio, materia,\ntrasformazione."
+        },
+        {
+          "level": "H2",
+          "text": "Leggere il contesto.\nCostruire una risposta."
+        },
+        {
+          "level": "H2",
+          "text": "Tre contesti.\nTre trasformazioni."
+        },
+        {
+          "level": "H3",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H3",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H3",
+          "text": "Interno 03"
+        },
+        {
+          "level": "H2",
+          "text": "Dall'edificio al dettaglio."
+        },
+        {
+          "level": "H3",
+          "text": "Architettura"
+        },
+        {
+          "level": "H3",
+          "text": "Interni"
+        },
+        {
+          "level": "H3",
+          "text": "Recupero"
+        },
+        {
+          "level": "H2",
+          "text": "Definire il progetto,\nprima del progetto."
+        }
+      ],
+      "links": [
+        {
+          "label": "Esplora i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "Profilo e metodo",
+          "href": "/studio/"
+        },
+        {
+          "label": "L'archivio completo",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "SF—01Architettura residenziale240 m² / IpotesiCorte 01Il vuoto come elemento distributivo.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "SF—02Recupero e riuso680 m² / IpotesiOfficina 02Una struttura esistente, un nuovo programma.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/officina-02/"
+        },
+        {
+          "label": "SF—03Architettura degli interni95 m² / IpotesiInterno 03Abitare uno spazio, distribuire le possibilità.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/interno-03/"
+        },
+        {
+          "label": "01ArchitetturaVolumi, distribuzione, rapporto con il contesto.",
+          "href": "/servizi/#ambito-01"
+        },
+        {
+          "label": "02InterniOrganizzazione degli usi, luce, materia e arredo.",
+          "href": "/servizi/#ambito-02"
+        },
+        {
+          "label": "03RecuperoLettura dell’esistente, nuovi programmi, innesti.",
+          "href": "/servizi/#ambito-03"
+        },
+        {
+          "label": "Prepara il brief",
+          "href": "/richiedi-un-progetto/"
+        }
+      ]
+    },
+    {
+      "path": "/studio/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Lo studio — Studio Forma",
+      "words": 263,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Metodo prima della forma."
+        },
+        {
+          "level": "H2",
+          "text": "L'architettura come\nlettura e trasformazione."
+        },
+        {
+          "level": "H2",
+          "text": "Tre passaggi di lavoro."
+        },
+        {
+          "level": "H3",
+          "text": "Leggere"
+        },
+        {
+          "level": "H3",
+          "text": "Mettere in relazione"
+        },
+        {
+          "level": "H3",
+          "text": "Rappresentare"
+        },
+        {
+          "level": "H2",
+          "text": "Continuità, precisione,\npossibilità d'uso."
+        },
+        {
+          "level": "H3",
+          "text": "Continuità con il contesto"
+        },
+        {
+          "level": "H3",
+          "text": "Precisione della materia"
+        },
+        {
+          "level": "H3",
+          "text": "Chiarezza delle relazioni"
+        }
+      ],
+      "links": [
+        {
+          "label": "Leggi i tre studi di progetto",
+          "href": "/portfolio/"
+        }
+      ]
+    },
+    {
+      "path": "/servizi/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Servizi — Studio Forma",
+      "words": 235,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Tre ambiti. Un metodo di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "Architettura"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        },
+        {
+          "level": "H2",
+          "text": "Interni"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        },
+        {
+          "level": "H2",
+          "text": "Recupero dell’esistente"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        }
+      ],
+      "links": [
+        {
+          "label": "Studio correlato: Corte 01",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "Studio correlato: Interno 03",
+          "href": "/portfolio/interno-03/"
+        },
+        {
+          "label": "Studio correlato: Officina 02",
+          "href": "/portfolio/officina-02/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Portfolio — Studio Forma",
+      "words": 132,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Tre contesti. Tre trasformazioni."
+        },
+        {
+          "level": "H3",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H3",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H3",
+          "text": "Interno 03"
+        }
+      ],
+      "links": [
+        {
+          "label": "SF—01Architettura residenziale240 m² / IpotesiCorte 01Il vuoto come elemento distributivo.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "SF—02Recupero e riuso680 m² / IpotesiOfficina 02Una struttura esistente, un nuovo programma.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/officina-02/"
+        },
+        {
+          "label": "SF—03Architettura degli interni95 m² / IpotesiInterno 03Abitare uno spazio, distribuire le possibilità.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/interno-03/"
+        }
+      ]
+    },
+    {
+      "path": "/contatti/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Contatti — Studio Forma",
+      "words": 151,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Un confronto comincia dai dati di partenza."
+        },
+        {
+          "level": "H2",
+          "text": "Studio fittizio.\nNessun recapito operativo."
+        },
+        {
+          "level": "H2",
+          "text": "Per orientare la richiesta."
+        },
+        {
+          "level": "H3",
+          "text": "Conoscere il metodo"
+        },
+        {
+          "level": "H3",
+          "text": "Confrontare gli ambiti"
+        },
+        {
+          "level": "H3",
+          "text": "Preparare un primo quadro"
+        },
+        {
+          "level": "H2",
+          "text": "Come funziona la demo."
+        }
+      ],
+      "links": [
+        {
+          "label": "Conoscere il metodoProfilo dello studio e criteri di lettura.",
+          "href": "/studio/"
+        },
+        {
+          "label": "Confrontare gli ambitiArchitettura, interni e recupero.",
+          "href": "/servizi/"
+        },
+        {
+          "label": "Preparare un primo quadroQuestionario guidato e brief preliminare copiabile.",
+          "href": "/richiedi-un-progetto/"
+        }
+      ]
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Richiedi un progetto — Studio Forma",
+      "words": 176,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Definire il quadro di partenza."
+        },
+        {
+          "level": "H2",
+          "text": "Intervento e immobile."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Corte 01 — Studio Forma",
+      "words": 245,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Una corte centrale"
+        },
+        {
+          "level": "H3",
+          "text": "Soglie progressive"
+        },
+        {
+          "level": "H3",
+          "text": "Struttura leggibile"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Officina 02",
+          "href": "/portfolio/officina-02/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/officina-02/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Officina 02 — Studio Forma",
+      "words": 243,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Conservare il ritmo"
+        },
+        {
+          "level": "H3",
+          "text": "Inserire senza saturare"
+        },
+        {
+          "level": "H3",
+          "text": "Una dorsale comune"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Interno 03",
+          "href": "/portfolio/interno-03/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/interno-03/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1425,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Interno 03 — Studio Forma",
+      "words": 245,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Interno 03"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Concentrare i servizi"
+        },
+        {
+          "level": "H3",
+          "text": "Ridurre i passaggi"
+        },
+        {
+          "level": "H3",
+          "text": "Separare quando serve"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Corte 01",
+          "href": "/portfolio/corte-01/"
+        }
+      ]
+    },
+    {
+      "path": "/pagina-inesistente/",
+      "viewport": 1440,
+      "width": 1440,
+      "scrollWidth": 1440,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Pagina non trovata — Studio Forma",
+      "words": 23,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Questo spazio non c'è."
+        }
+      ],
+      "links": [
+        {
+          "label": "Torna alla home",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "path": "/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Studio Forma — Architettura, materia, metodo",
+      "words": 218,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Spazio, materia,\ntrasformazione."
+        },
+        {
+          "level": "H2",
+          "text": "Leggere il contesto.\nCostruire una risposta."
+        },
+        {
+          "level": "H2",
+          "text": "Tre contesti.\nTre trasformazioni."
+        },
+        {
+          "level": "H3",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H3",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H3",
+          "text": "Interno 03"
+        },
+        {
+          "level": "H2",
+          "text": "Dall'edificio al dettaglio."
+        },
+        {
+          "level": "H3",
+          "text": "Architettura"
+        },
+        {
+          "level": "H3",
+          "text": "Interni"
+        },
+        {
+          "level": "H3",
+          "text": "Recupero"
+        },
+        {
+          "level": "H2",
+          "text": "Definire il progetto,\nprima del progetto."
+        }
+      ],
+      "links": [
+        {
+          "label": "Esplora i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "Profilo e metodo",
+          "href": "/studio/"
+        },
+        {
+          "label": "L'archivio completo",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "SF—01Architettura residenziale240 m² / IpotesiCorte 01Il vuoto come elemento distributivo.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "SF—02Recupero e riuso680 m² / IpotesiOfficina 02Una struttura esistente, un nuovo programma.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/officina-02/"
+        },
+        {
+          "label": "SF—03Architettura degli interni95 m² / IpotesiInterno 03Abitare uno spazio, distribuire le possibilità.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/interno-03/"
+        },
+        {
+          "label": "01ArchitetturaVolumi, distribuzione, rapporto con il contesto.",
+          "href": "/servizi/#ambito-01"
+        },
+        {
+          "label": "02InterniOrganizzazione degli usi, luce, materia e arredo.",
+          "href": "/servizi/#ambito-02"
+        },
+        {
+          "label": "03RecuperoLettura dell’esistente, nuovi programmi, innesti.",
+          "href": "/servizi/#ambito-03"
+        },
+        {
+          "label": "Prepara il brief",
+          "href": "/richiedi-un-progetto/"
+        }
+      ]
+    },
+    {
+      "path": "/studio/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Lo studio — Studio Forma",
+      "words": 263,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Metodo prima della forma."
+        },
+        {
+          "level": "H2",
+          "text": "L'architettura come\nlettura e trasformazione."
+        },
+        {
+          "level": "H2",
+          "text": "Tre passaggi di lavoro."
+        },
+        {
+          "level": "H3",
+          "text": "Leggere"
+        },
+        {
+          "level": "H3",
+          "text": "Mettere in relazione"
+        },
+        {
+          "level": "H3",
+          "text": "Rappresentare"
+        },
+        {
+          "level": "H2",
+          "text": "Continuità, precisione,\npossibilità d'uso."
+        },
+        {
+          "level": "H3",
+          "text": "Continuità con il contesto"
+        },
+        {
+          "level": "H3",
+          "text": "Precisione della materia"
+        },
+        {
+          "level": "H3",
+          "text": "Chiarezza delle relazioni"
+        }
+      ],
+      "links": [
+        {
+          "label": "Leggi i tre studi di progetto",
+          "href": "/portfolio/"
+        }
+      ]
+    },
+    {
+      "path": "/servizi/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Servizi — Studio Forma",
+      "words": 235,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Tre ambiti. Un metodo di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "Architettura"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        },
+        {
+          "level": "H2",
+          "text": "Interni"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        },
+        {
+          "level": "H2",
+          "text": "Recupero dell’esistente"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        }
+      ],
+      "links": [
+        {
+          "label": "Studio correlato: Corte 01",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "Studio correlato: Interno 03",
+          "href": "/portfolio/interno-03/"
+        },
+        {
+          "label": "Studio correlato: Officina 02",
+          "href": "/portfolio/officina-02/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Portfolio — Studio Forma",
+      "words": 132,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Tre contesti. Tre trasformazioni."
+        },
+        {
+          "level": "H3",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H3",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H3",
+          "text": "Interno 03"
+        }
+      ],
+      "links": [
+        {
+          "label": "SF—01Architettura residenziale240 m² / IpotesiCorte 01Il vuoto come elemento distributivo.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "SF—02Recupero e riuso680 m² / IpotesiOfficina 02Una struttura esistente, un nuovo programma.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/officina-02/"
+        },
+        {
+          "label": "SF—03Architettura degli interni95 m² / IpotesiInterno 03Abitare uno spazio, distribuire le possibilità.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/interno-03/"
+        }
+      ]
+    },
+    {
+      "path": "/contatti/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Contatti — Studio Forma",
+      "words": 151,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Un confronto comincia dai dati di partenza."
+        },
+        {
+          "level": "H2",
+          "text": "Studio fittizio.\nNessun recapito operativo."
+        },
+        {
+          "level": "H2",
+          "text": "Per orientare la richiesta."
+        },
+        {
+          "level": "H3",
+          "text": "Conoscere il metodo"
+        },
+        {
+          "level": "H3",
+          "text": "Confrontare gli ambiti"
+        },
+        {
+          "level": "H3",
+          "text": "Preparare un primo quadro"
+        },
+        {
+          "level": "H2",
+          "text": "Come funziona la demo."
+        }
+      ],
+      "links": [
+        {
+          "label": "Conoscere il metodoProfilo dello studio e criteri di lettura.",
+          "href": "/studio/"
+        },
+        {
+          "label": "Confrontare gli ambitiArchitettura, interni e recupero.",
+          "href": "/servizi/"
+        },
+        {
+          "label": "Preparare un primo quadroQuestionario guidato e brief preliminare copiabile.",
+          "href": "/richiedi-un-progetto/"
+        }
+      ]
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Richiedi un progetto — Studio Forma",
+      "words": 170,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Definire il quadro di partenza."
+        },
+        {
+          "level": "H2",
+          "text": "Intervento e immobile."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Corte 01 — Studio Forma",
+      "words": 245,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Una corte centrale"
+        },
+        {
+          "level": "H3",
+          "text": "Soglie progressive"
+        },
+        {
+          "level": "H3",
+          "text": "Struttura leggibile"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Officina 02",
+          "href": "/portfolio/officina-02/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/officina-02/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Officina 02 — Studio Forma",
+      "words": 243,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Conservare il ritmo"
+        },
+        {
+          "level": "H3",
+          "text": "Inserire senza saturare"
+        },
+        {
+          "level": "H3",
+          "text": "Una dorsale comune"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Interno 03",
+          "href": "/portfolio/interno-03/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/interno-03/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 753,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Interno 03 — Studio Forma",
+      "words": 245,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Interno 03"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Concentrare i servizi"
+        },
+        {
+          "level": "H3",
+          "text": "Ridurre i passaggi"
+        },
+        {
+          "level": "H3",
+          "text": "Separare quando serve"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Corte 01",
+          "href": "/portfolio/corte-01/"
+        }
+      ]
+    },
+    {
+      "path": "/pagina-inesistente/",
+      "viewport": 768,
+      "width": 768,
+      "scrollWidth": 768,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Pagina non trovata — Studio Forma",
+      "words": 23,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Questo spazio non c'è."
+        }
+      ],
+      "links": [
+        {
+          "label": "Torna alla home",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "path": "/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Studio Forma — Architettura, materia, metodo",
+      "words": 218,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Spazio, materia,\ntrasformazione."
+        },
+        {
+          "level": "H2",
+          "text": "Leggere il contesto.\nCostruire una risposta."
+        },
+        {
+          "level": "H2",
+          "text": "Tre contesti.\nTre trasformazioni."
+        },
+        {
+          "level": "H3",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H3",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H3",
+          "text": "Interno 03"
+        },
+        {
+          "level": "H2",
+          "text": "Dall'edificio al dettaglio."
+        },
+        {
+          "level": "H3",
+          "text": "Architettura"
+        },
+        {
+          "level": "H3",
+          "text": "Interni"
+        },
+        {
+          "level": "H3",
+          "text": "Recupero"
+        },
+        {
+          "level": "H2",
+          "text": "Definire il progetto,\nprima del progetto."
+        }
+      ],
+      "links": [
+        {
+          "label": "Esplora i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "Profilo e metodo",
+          "href": "/studio/"
+        },
+        {
+          "label": "L'archivio completo",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "SF—01Architettura residenziale240 m² / IpotesiCorte 01Il vuoto come elemento distributivo.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "SF—02Recupero e riuso680 m² / IpotesiOfficina 02Una struttura esistente, un nuovo programma.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/officina-02/"
+        },
+        {
+          "label": "SF—03Architettura degli interni95 m² / IpotesiInterno 03Abitare uno spazio, distribuire le possibilità.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/interno-03/"
+        },
+        {
+          "label": "01ArchitetturaVolumi, distribuzione, rapporto con il contesto.",
+          "href": "/servizi/#ambito-01"
+        },
+        {
+          "label": "02InterniOrganizzazione degli usi, luce, materia e arredo.",
+          "href": "/servizi/#ambito-02"
+        },
+        {
+          "label": "03RecuperoLettura dell’esistente, nuovi programmi, innesti.",
+          "href": "/servizi/#ambito-03"
+        },
+        {
+          "label": "Prepara il brief",
+          "href": "/richiedi-un-progetto/"
+        }
+      ]
+    },
+    {
+      "path": "/studio/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Lo studio — Studio Forma",
+      "words": 263,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Metodo prima della forma."
+        },
+        {
+          "level": "H2",
+          "text": "L'architettura come\nlettura e trasformazione."
+        },
+        {
+          "level": "H2",
+          "text": "Tre passaggi di lavoro."
+        },
+        {
+          "level": "H3",
+          "text": "Leggere"
+        },
+        {
+          "level": "H3",
+          "text": "Mettere in relazione"
+        },
+        {
+          "level": "H3",
+          "text": "Rappresentare"
+        },
+        {
+          "level": "H2",
+          "text": "Continuità, precisione,\npossibilità d'uso."
+        },
+        {
+          "level": "H3",
+          "text": "Continuità con il contesto"
+        },
+        {
+          "level": "H3",
+          "text": "Precisione della materia"
+        },
+        {
+          "level": "H3",
+          "text": "Chiarezza delle relazioni"
+        }
+      ],
+      "links": [
+        {
+          "label": "Leggi i tre studi di progetto",
+          "href": "/portfolio/"
+        }
+      ]
+    },
+    {
+      "path": "/servizi/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Servizi — Studio Forma",
+      "words": 235,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Tre ambiti. Un metodo di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "Architettura"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        },
+        {
+          "level": "H2",
+          "text": "Interni"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        },
+        {
+          "level": "H2",
+          "text": "Recupero dell’esistente"
+        },
+        {
+          "level": "H3",
+          "text": "ELABORATI CONCETTUALI"
+        }
+      ],
+      "links": [
+        {
+          "label": "Studio correlato: Corte 01",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "Studio correlato: Interno 03",
+          "href": "/portfolio/interno-03/"
+        },
+        {
+          "label": "Studio correlato: Officina 02",
+          "href": "/portfolio/officina-02/"
+        }
+      ]
+    },
+    {
+      "path": "/portfolio/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Portfolio — Studio Forma",
+      "words": 132,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Tre contesti. Tre trasformazioni."
+        },
+        {
+          "level": "H3",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H3",
+          "text": "Officina 02"
+        },
+        {
+          "level": "H3",
+          "text": "Interno 03"
+        }
+      ],
+      "links": [
+        {
+          "label": "SF—01Architettura residenziale240 m² / IpotesiCorte 01Il vuoto come elemento distributivo.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/corte-01/"
+        },
+        {
+          "label": "SF—02Recupero e riuso680 m² / IpotesiOfficina 02Una struttura esistente, un nuovo programma.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/officina-02/"
+        },
+        {
+          "label": "SF—03Architettura degli interni95 m² / IpotesiInterno 03Abitare uno spazio, distribuire le possibilità.Studio concettuale · Progetto fittizio",
+          "href": "/portfolio/interno-03/"
+        }
+      ]
+    },
+    {
+      "path": "/contatti/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Contatti — Studio Forma",
+      "words": 151,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Un confronto comincia dai dati di partenza."
+        },
+        {
+          "level": "H2",
+          "text": "Studio fittizio.\nNessun recapito operativo."
+        },
+        {
+          "level": "H2",
+          "text": "Per orientare la richiesta."
+        },
+        {
+          "level": "H3",
+          "text": "Conoscere il metodo"
+        },
+        {
+          "level": "H3",
+          "text": "Confrontare gli ambiti"
+        },
+        {
+          "level": "H3",
+          "text": "Preparare un primo quadro"
+        },
+        {
+          "level": "H2",
+          "text": "Come funziona la demo."
+        }
+      ],
+      "links": [
+        {
+          "label": "Conoscere il metodoProfilo dello studio e criteri di lettura.",
+          "href": "/studio/"
+        },
+        {
+          "label": "Confrontare gli ambitiArchitettura, interni e recupero.",
+          "href": "/servizi/"
+        },
+        {
+          "label": "Preparare un primo quadroQuestionario guidato e brief preliminare copiabile.",
+          "href": "/richiedi-un-progetto/"
+        }
+      ]
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Richiedi un progetto — Studio Forma",
+      "words": 170,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Definire il quadro di partenza."
+        },
+        {
+          "level": "H2",
+          "text": "Intervento e immobile."
+        }
+      ],
+      "links": []
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "viewport": 390,
+      "width": 390,
+      "scrollWidth": 375,
+      "h1": 1,
+      "imagesLoaded": true,
+      "title": "Corte 01 — Studio Forma",
+      "words": 245,
+      "headings": [
+        {
+          "level": "H1",
+          "text": "Corte 01"
+        },
+        {
+          "level": "H2",
+          "text": "La domanda di progetto."
+        },
+        {
+          "level": "H2",
+          "text": "L'ipotesi."
+        },
+        {
+          "level": "H2",
+          "text": "Tre scelte, un sistema."
+        },
+        {
+          "level": "H3",
+          "text": "Una corte centrale"
+        },
+        {
+          "level": "H3",
+          "text": "Soglie progressive"
+        },
+        {
+          "level": "H3",
+          "text": "Struttura leggibile"
+        },
+        {
+          "level": "H2",
+          "text": "Materiali e carattere."
+        }
+      ],
+      "links": [
+        {
+          "label": "← Tutti i progetti",
+          "href": "/portfolio/"
+        },
+        {
+          "label": "Officina 02",
+          "href": "/portfolio/officina-02/"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "HTTP / at 1440",
+    "Layout/H1/images / at 1440",
+    "HTTP /studio/ at 1440",
+    "Layout/H1/images /studio/ at 1440",
+    "HTTP /servizi/ at 1440",
+    "Layout/H1/images /servizi/ at 1440",
+    "HTTP /portfolio/ at 1440",
+    "Layout/H1/images /portfolio/ at 1440",
+    "HTTP /contatti/ at 1440",
+    "Layout/H1/images /contatti/ at 1440",
+    "HTTP /richiedi-un-progetto/ at 1440",
+    "Layout/H1/images /richiedi-un-progetto/ at 1440",
+    "HTTP /portfolio/corte-01/ at 1440",
+    "Layout/H1/images /portfolio/corte-01/ at 1440",
+    "HTTP /portfolio/officina-02/ at 1440",
+    "Layout/H1/images /portfolio/officina-02/ at 1440",
+    "HTTP /portfolio/interno-03/ at 1440",
+    "Layout/H1/images /portfolio/interno-03/ at 1440",
+    "HTTP /pagina-inesistente/ at 1440",
+    "Layout/H1/images /pagina-inesistente/ at 1440",
+    "HTTP / at 768",
+    "Layout/H1/images / at 768",
+    "HTTP /studio/ at 768",
+    "Layout/H1/images /studio/ at 768",
+    "HTTP /servizi/ at 768",
+    "Layout/H1/images /servizi/ at 768",
+    "HTTP /portfolio/ at 768",
+    "Layout/H1/images /portfolio/ at 768",
+    "HTTP /contatti/ at 768",
+    "Layout/H1/images /contatti/ at 768",
+    "HTTP /richiedi-un-progetto/ at 768",
+    "Layout/H1/images /richiedi-un-progetto/ at 768",
+    "HTTP /portfolio/corte-01/ at 768",
+    "Layout/H1/images /portfolio/corte-01/ at 768",
+    "HTTP /portfolio/officina-02/ at 768",
+    "Layout/H1/images /portfolio/officina-02/ at 768",
+    "HTTP /portfolio/interno-03/ at 768",
+    "Layout/H1/images /portfolio/interno-03/ at 768",
+    "HTTP /pagina-inesistente/ at 768",
+    "Layout/H1/images /pagina-inesistente/ at 768",
+    "HTTP / at 390",
+    "Layout/H1/images / at 390",
+    "HTTP /studio/ at 390",
+    "Layout/H1/images /studio/ at 390",
+    "HTTP /servizi/ at 390",
+    "Layout/H1/images /servizi/ at 390",
+    "HTTP /portfolio/ at 390",
+    "Layout/H1/images /portfolio/ at 390",
+    "HTTP /contatti/ at 390",
+    "Layout/H1/images /contatti/ at 390",
+    "HTTP /richiedi-un-progetto/ at 390",
+    "Layout/H1/images /richiedi-un-progetto/ at 390",
+    "HTTP /portfolio/corte-01/ at 390",
+    "Layout/H1/images /portfolio/corte-01/ at 390"
+  ],
+  "clipboard": {},
+  "errors": [],
+  "mutations": [],
+  "screenshots": [
+    "home-1440.png",
+    "portfolio-1440.png",
+    "brief-initial-1440.png",
+    "home-390.png",
+    "brief-initial-390.png",
+    "project-390.png",
+    "failure.png"
+  ],
+  "failure": {
+    "message": "locator.scrollIntoViewIfNeeded: Timeout 7981.526000000536ms exceeded.\nCall log:\n\u001b[2m  - attempting scroll into view action\u001b[22m\n\u001b[2m    - waiting for element to be stable\u001b[22m\n",
+    "url": "http://127.0.0.1:8794/portfolio/officina-02/"
+  }
+}

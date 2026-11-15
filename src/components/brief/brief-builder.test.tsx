@@ -5,7 +5,6 @@ import { BriefBuilder } from "./brief-builder";
 afterEach(() => vi.unstubAllGlobals());
 
 test("campi iniziali e messaggi hanno nomi e associazioni accessibili, senza invio nativo", async () => {
-  vi.stubGlobal("requestAnimationFrame", () => 0);
   const { screen, render, userEvent } = await createDOM();
   await render(<BriefBuilder />);
   expect(screen.querySelector("form")).toBeFalsy();
@@ -44,7 +43,6 @@ test("campi iniziali e messaggi hanno nomi e associazioni accessibili, senza inv
 
 test("percorso: errori, avanti/indietro, modifica, copia, fallback e ripristino", async () => {
   // Il DOM Qwik non è un browser: il focus viene verificato separatamente in Playwright.
-  vi.stubGlobal("requestAnimationFrame", () => 0);
   const writeText = vi.fn().mockResolvedValue(undefined);
   vi.stubGlobal("navigator", { clipboard: { writeText } });
   const { screen, render, userEvent } = await createDOM();
