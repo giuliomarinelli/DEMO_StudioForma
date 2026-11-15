@@ -43,3 +43,17 @@ test("il menu mobile aggiorna aria-expanded e si chiude alla selezione", async (
   await userEvent('nav a[href="/studio/"]', "click");
   expect(button.getAttribute("aria-expanded")).toBe("false");
 });
+
+test("una scheda progetto mantiene riconoscibile la sezione Portfolio", async () => {
+  const { screen, render } = await createDOM();
+  await render(
+    <QwikCityMockProvider url="https://studio-forma.example/portfolio/corte-01/">
+      <Header />
+    </QwikCityMockProvider>,
+  );
+  const nav = screen.querySelector("nav")!;
+  expect(nav.querySelector('[aria-current="location"]')?.textContent).toBe(
+    "Portfolio",
+  );
+  expect(nav.querySelector('[aria-current="page"]')).toBeFalsy();
+});

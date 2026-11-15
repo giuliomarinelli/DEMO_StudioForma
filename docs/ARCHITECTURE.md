@@ -1,11 +1,12 @@
 # Architettura — Studio Forma
 
-## Perimetro della milestone 1
+## Perimetro dopo la milestone 2
 
 Applicazione Qwik City con rendering server a ogni richiesta alle pagine pubbliche.
-Lo studio, il concept e i servizi sono fittizi. La milestone prepara identità visiva,
-layout, navigazione e contenuti introduttivi: non completa il catalogo progetti e non
-implementa il questionario. Non esistono database, autenticazione, CMS, invii o API
+Lo studio, i tre progetti concettuali e i servizi sono fittizi. La milestone 2
+completa i contenuti e il portfolio, rinnova identità visiva e layout e prepara
+un'anteprima statica della richiesta. Non implementa il questionario.
+Non esistono database, autenticazione, CMS, invii o API
 business. Le Pages Functions sono esclusivamente il runtime del rendering SSR.
 
 ## Stack e motivazioni
@@ -38,18 +39,21 @@ src/
   root.tsx                              # provider, head e RouterOutlet
   global.css                            # tema, layout, responsive e focus
   lib/navigation.ts                     # destinazioni condivise
-  media/casa-corte.svg                   # illustrazione originale locale
+  lib/projects.ts                       # tre studi tipizzati, dati mock locali
+  media/{corte-01,officina-02,interno-03}.svg # tavole originali locali
   components/
     header/                             # disclosure menu e test
     footer/                             # navigazione e dichiarazione demo
     router-head/                        # SEO Qwik City
     ui/                                 # freccia e introduzione pagine
+    projects/                           # card archivio e scheda condivisa
   routes/
     layout.tsx                          # header/main/footer e skip link
     index.tsx                           # homepage
     studio/index.tsx
     servizi/index.tsx
     portfolio/index.tsx
+    portfolio/{corte-01,officina-02,interno-03}/index.tsx
     contatti/index.tsx
     richiedi-un-progetto/index.tsx
     404.tsx
@@ -64,7 +68,7 @@ La risposta contiene già layout, titolo, descrizione e contenuti. Lo stato Qwik
 serializzato permette di riprendere le interazioni nel browser senza rifare il
 rendering iniziale. Non sono impostati `onStaticGenerate` né prerender delle pagine.
 L'adapter produce anche una pagina 404 statica di fallback: non sostituisce l'SSR
-delle sei rotte pubbliche.
+delle nove rotte pubbliche.
 
 I collegamenti sono normali anchor con URL reali: funzionano con navigazione HTTP
 e non richiedono un router SPA. Il menu mobile usa `component$`, `useSignal` e
@@ -83,19 +87,34 @@ La 404 dichiara `noindex`.
 
 Documento in italiano, un H1 per pagina, landmark semantici, skip link, menu con
 `aria-expanded`, `aria-controls` e `aria-current`, SVG decorativi nascosti agli
-screen reader, testo alternativo per l'illustrazione e focus visibile. Il tema
+screen reader, testo alternativo per le tavole e focus visibile. Nelle schede
+figlie il link Portfolio usa `aria-current="location"`. Il tema
 rispetta `prefers-reduced-motion`. La verifica iniziale non equivale a una
 certificazione WCAG; audit esteso e prove assistive appartengono alla milestone 4.
 
 ## Asset e licenze
 
-Illustrazione `src/media/casa-corte.svg`, favicon `public/forma.svg`, icona freccia,
-marchio e disegni CSS sono stati realizzati per questa demo. Non riproducono opere
+Le tre tavole `src/media/corte-01.svg`, `officina-02.svg`, `interno-03.svg`, la
+favicon `public/forma.svg`, l'icona freccia e il marchio sono stati realizzati
+per questa demo. La precedente illustrazione verde è stata sostituita. Non riproducono opere
 o marchi reali e non incorporano immagini di terzi. Le loro fonti sono i file
 versionati; non richiedono attribuzioni esterne. I font sono quelli di sistema,
 senza download. Lo scaffold deriva dal progetto Qwik, distribuito con licenza MIT;
 le licenze delle dipendenze restano nei rispettivi pacchetti npm. Non viene
 attribuita automaticamente una licenza generale all'intero repository.
+
+## Contenuti e identità della milestone 2
+
+`src/lib/projects.ts` è la sorgente dei tre progetti: metadati, tavola SVG,
+domanda, ipotesi, materiali e scelte. `ProjectCard` serve homepage e archivio;
+`ProjectDetail` evita duplicazioni nelle tre schede. Le pagine sono rotte
+file-based esplicite; non servono endpoint, loader business o lookup dinamici.
+Ogni pagina esporta il proprio head SSR. Superfici e contesti sono ipotetici e
+il carattere concettuale è dichiarato anche nell'HTML iniziale.
+
+Tema e voce editoriale sono definiti in [BRAND_DIRECTION.md](BRAND_DIRECTION.md).
+La pagina Richiedi un progetto è statica: nuclei informativi e facsimile,
+senza campi, gestione di step, dati salvati, generazione, copia o invio.
 
 ## Limiti e dipendenze
 

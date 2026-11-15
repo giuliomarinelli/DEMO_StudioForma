@@ -1,169 +1,167 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { Arrow } from "~/components/ui/arrow";
-import casaCorte from "~/media/casa-corte.svg?url";
+import { ProjectCard } from "~/components/projects/project-card";
+import { projects } from "~/lib/projects";
 
 export default component$(() => (
   <>
     <section class="hero shell" aria-labelledby="hero-title">
-      <div class="hero-copy">
+      <div class="hero-register">
         <p class="eyebrow">
-          <span class="tiny-cross" aria-hidden="true">
-            +
-          </span>
-          Architettura · Interni · Paesaggio
+          <span class="blue-square" />
+          Studio Forma / Architettura contemporanea
         </p>
-        <h1 id="hero-title">
-          Lo spazio,
+        <span class="technical-label">Indice di ricerca / 2026</span>
+      </div>
+      <h1 id="hero-title">
+        Spazio, materia,
+        <br />
+        <span>trasformazione.</span>
+      </h1>
+      <div class="hero-baseline">
+        <span class="hero-cross" aria-hidden="true">
+          +
+        </span>
+        <p>
+          Architettura, interni e recupero dell'esistente.
           <br />
-          dalla tua
-          <br />
-          <em>parte.</em>
-        </h1>
-        <p class="hero-description">
-          Luoghi da vivere, prima che da guardare.
-          <br class="hidden sm:block" /> Immaginiamo architetture che mettono al
-          centro
-          <br class="hidden xl:block" /> le persone, la luce e le possibilità.
+          Un metodo di lettura. Tre ipotesi di progetto.
         </p>
-        <a href="/studio/" class="button button-dark">
-          Entra nello studio
+        <a href="/portfolio/" class="button button-dark">
+          Esplora i progetti
           <Arrow diagonal />
         </a>
-        <div class="hero-footnote">
-          <span class="small-rule" />
-          Uno sguardo attento. Una forma essenziale.
-        </div>
       </div>
-      <figure class="hero-figure">
-        <div class="hero-image-wrap">
-          <img
-            src={casaCorte}
-            width="1000"
-            height="1100"
-            alt="Illustrazione originale di una casa a corte: volumi chiari, grandi vetrate e un ulivo su una terrazza a gradoni."
-            fetchPriority="high"
-          />
-          <span class="image-tag">Taccuino di architettura — 01</span>
-          <span class="image-coordinate" aria-hidden="true">
-            F / 01
-          </span>
-        </div>
+      <figure class="hero-plate">
+        <img
+          src={projects[0].drawing}
+          width="1200"
+          height="660"
+          alt={projects[0].drawingAlt}
+          fetchPriority="high"
+        />
         <figcaption>
-          <div>
-            <strong>Casa della luce</strong>
-            <span>Studio di volumi · Concept fittizio</span>
-          </div>
-          <a href="/portfolio/" aria-label="Esplora il portfolio dimostrativo">
+          <span>SF—01 / Corte 01</span>
+          <span>Studio volumetrico · Progetto fittizio</span>
+          <a href="/portfolio/corte-01/" aria-label="Apri la scheda Corte 01">
             <Arrow diagonal />
           </a>
         </figcaption>
+        <div class="plate-index" aria-hidden="true">
+          F<span>01—03</span>
+        </div>
       </figure>
     </section>
-    <section class="manifesto shell" aria-labelledby="manifesto-title">
-      <p class="eyebrow">
-        <span class="index-number">01 /</span>Il nostro sguardo
-      </p>
+    <section class="shell editorial-section" aria-labelledby="practice-title">
+      <p class="eyebrow">01 / Posizione</p>
       <div>
-        <h2 id="manifesto-title">
-          Non solo metri quadri.
+        <h2 id="practice-title">
+          Leggere il contesto.
           <br />
-          <span class="text-muted">Modi di stare bene.</span>
+          Costruire una risposta.
         </h2>
-        <div class="manifesto-bottom">
-          <p>
-            Una finestra orientata al mattino. Un materiale che migliora con il
-            tempo. Un passaggio che diventa incontro. Per noi, il progetto
-            comincia dalle piccole cose che cambiano il quotidiano.
+        <div class="editorial-bottom">
+          <p class="body-copy">
+            Lo spazio si definisce attraverso struttura, usi e materia. Studio
+            Forma indaga queste relazioni con disegni, modelli concettuali e
+            scelte verificabili nella rappresentazione. Un archivio di ricerca,
+            interamente dimostrativo.
           </p>
           <a href="/studio/" class="text-link">
-            La filosofia dello studio
+            Profilo e metodo
             <Arrow />
           </a>
         </div>
       </div>
     </section>
-    <section class="services-section" aria-labelledby="services-title">
+    <section class="selected-projects" aria-labelledby="projects-title">
       <div class="shell">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">02 / Cosa immaginiamo</p>
-            <h2 id="services-title">Dall'idea, all'abitare.</h2>
+            <p class="eyebrow">02 / Archivio dei progetti</p>
+            <h2 id="projects-title">
+              Tre contesti.
+              <br />
+              Tre trasformazioni.
+            </h2>
           </div>
-          <a href="/servizi/" class="text-link">
-            Esplora i servizi
+          <a href="/portfolio/" class="text-link">
+            L'archivio completo
             <Arrow />
           </a>
         </div>
-        <div class="service-grid">
-          {[
-            {
-              number: "01",
-              title: "Architettura",
-              text: "Dare una nuova prospettiva a un edificio. Progettare relazioni tra spazi, persone e contesto.",
-              shape: "architecture",
-            },
-            {
-              number: "02",
-              title: "Interni",
-              text: "Trovare un equilibrio tra materia e gesti quotidiani. Con luce, proporzioni e dettagli su misura.",
-              shape: "interiors",
-            },
-            {
-              number: "03",
-              title: "Riqualificazione",
-              text: "Riconoscere ciò che merita di restare. Immaginare una seconda vita per gli spazi esistenti.",
-              shape: "renewal",
-            },
-          ].map((service) => (
-            <a key={service.number} href="/servizi/" class="service-item">
-              <div class="service-top">
-                <span>{service.number}</span>
-                <Arrow diagonal />
-              </div>
-              <div class={["volume-sketch", service.shape]} aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </div>
-              <h3>{service.title}</h3>
-              <p>{service.text}</p>
-            </a>
+        <div class="project-grid">
+          {projects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>
     </section>
-    <section class="starting-point shell">
-      <p class="eyebrow">03 / Il primo passo</p>
-      <div>
-        <h2>
-          Le idee hanno bisogno
-          <br />
-          di un po' di spazio.
-        </h2>
-        <p>
-          Una ristrutturazione, una casa da ripensare, un'esigenza ancora da
-          mettere a fuoco. Ogni progetto comincia da una domanda.
-        </p>
-        <a class="text-link" href="/richiedi-un-progetto/">
-          Scopri da dove iniziare
-          <Arrow />
-        </a>
+    <section class="shell scope-section" aria-labelledby="scope-title">
+      <div class="section-heading">
+        <p class="eyebrow">03 / Campi di lavoro</p>
+        <h2 id="scope-title">Dall'edificio al dettaglio.</h2>
       </div>
-      <span class="large-asterisk" aria-hidden="true">
-        ✳
-      </span>
+      <div class="scope-list">
+        {[
+          {
+            id: "01",
+            title: "Architettura",
+            text: "Volumi, distribuzione, rapporto con il contesto.",
+          },
+          {
+            id: "02",
+            title: "Interni",
+            text: "Organizzazione degli usi, luce, materia e arredo.",
+          },
+          {
+            id: "03",
+            title: "Recupero",
+            text: "Lettura dell’esistente, nuovi programmi, innesti.",
+          },
+        ].map((item) => (
+          <a key={item.id} href={"/servizi/#ambito-" + item.id}>
+            <span class="eyebrow">{item.id}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <Arrow diagonal />
+          </a>
+        ))}
+      </div>
+    </section>
+    <section class="brief-band">
+      <div class="shell brief-band-inner">
+        <p class="eyebrow">04 / Richiesta preliminare</p>
+        <div>
+          <h2>
+            Definire il progetto,
+            <br />
+            prima del progetto.
+          </h2>
+          <p>
+            Un percorso per ordinare contesto, esigenze e priorità. Scopri come
+            sarà strutturata la futura bozza di richiesta.
+          </p>
+          <a class="text-link" href="/richiedi-un-progetto/">
+            Consulta l'anteprima
+            <Arrow />
+          </a>
+        </div>
+        <span class="brief-band-number" aria-hidden="true">
+          04
+        </span>
+      </div>
     </section>
   </>
 ));
-
 export const head: DocumentHead = {
-  title: "Studio Forma — Architettura per abitare",
+  title: "Studio Forma — Architettura, materia, metodo",
   meta: [
     {
       name: "description",
       content:
-        "Architettura, interni e riqualificazione: scopri Studio Forma, uno studio fittizio che mette al centro persone, luce e modi di abitare. Esperienza demo.",
+        "Architettura contemporanea, interni e recupero: tre studi concettuali di Studio Forma. Un archivio dimostrativo di progetti interamente fittizi.",
     },
   ],
 };

@@ -1,46 +1,66 @@
 # Studio Forma — Caso studio dimostrativo
 
-## Obiettivo
+## Obiettivo e stato
 
-Presentare uno studio di architettura fittizio attraverso un'esperienza editoriale
-riconoscibile. Il tratto distintivo dell'MVP completo sarà un questionario che
-trasforma le esigenze del visitatore in una bozza preliminare copiabile, senza
-trasmissione di dati. Questa prima milestone costruisce le fondamenta.
+Rappresentare uno studio di architettura contemporanea, rigoroso e sperimentale
+attraverso un archivio editoriale di progetti fittizi. La milestone 1 ha preparato
+Qwik City SSR e la struttura del sito. La milestone 2 completa identità e contenuti.
+Il questionario che produrrà una bozza preliminare copiabile resta alla milestone 3.
 
-## Risultato della milestone 1
+## Evoluzione dell'identità
 
-Homepage con messaggio «Lo spazio, dalla tua parte», concept architettonico
-originale, manifesto e introduzione ai tre ambiti. Header, footer e struttura
-responsive condividono una navigazione completa. Studio, Servizi, Portfolio,
-Contatti e Richiedi un progetto sono vere rotte SSR, con contenuti introduttivi e
-metadati specifici. La pagina di richiesta spiega chiaramente che il questionario
-non è attivo. Nessuna falsa testimonianza, progetto realizzato, recapito o sede.
+La foundation utilizzava avorio, verde e un accento serif. La direzione approvata
+per la milestone 2 li sostituisce con grafite #171C20, cemento #EAE9E4, blu tecnico
+#2F59C4 e acciaio #86919A. Sans-serif modernista, numerazioni monospaziate,
+linee di costruzione e cartigli organizzano le informazioni come tavole di studio.
+Il riferimento operativo è [BRAND_DIRECTION.md](BRAND_DIRECTION.md).
 
-## Scelte progettuali
+La homepage ora ha un titolo a tutta larghezza e una tavola volumetrica sotto
+il registro introduttivo. La gerarchia è prevalentemente tipografica; il disegno
+rende concreto il campo di ricerca. La composizione abbandona lo schema con
+hero testuale affiancato a un'illustrazione domestica della foundation.
 
-La palette avorio e verde profondo, la griglia asimmetrica, la tipografia ampia e
-l'accento serif distinguono il sito da un catalogo immobiliare. Un'illustrazione
-vettoriale locale di volumi e terrazze sostituisce fotografie di edifici reali:
-il racconto rimane coerente con la natura fittizia dello studio e le fonti degli
-asset sono interamente verificabili nel repository.
+## Tre progetti, tre temi
 
-Qwik City consente di servire già nella prima risposta i contenuti pubblici e il
-relativo SEO. Il menu usa primitive reattive Qwik senza librerie di stato o
-componenti UI aggiuntive. Le Pages Functions eseguono il solo SSR. L'assenza di
-backend business mantiene la demo riproducibile e limita il costo architetturale.
+- **Corte 01:** architettura residenziale. Una corte aperta organizza volumi,
+  accessi e soglie. Tavola assonometrica con linee di costruzione.
+- **Officina 02:** recupero di un involucro produttivo ipotetico. Telai ripetuti
+  e nuovi volumi autonomi rendono leggibile la relazione tra esistente e innesti.
+- **Interno 03:** architettura degli interni. Un nucleo centrale raccoglie i
+  servizi, mentre una partizione rende separabile lo spazio di lavoro.
 
-## Evidenze e limiti
+Ogni progetto ha una vera rotta SSR, metadati specifici, dati di studio, domanda,
+ipotesi, tre criteri e materiali. Superfici e programmi sono ipotetici; tutti i
+progetti sono concettuali, fittizi e non realizzati. Le tre tavole SVG sono
+originali e incluse nel repository, senza immagini o font remoti.
 
-La validazione tecnica comprende TypeScript strict, ESLint con regole Qwik,
-test del menu e richieste HTTP al worker di produzione eseguito localmente da
-Wrangler. Esiti, problemi incontrati e verifica visuale sono registrati in
-[WORKLOG.md](WORKLOG.md). Una build locale non equivale a un deployment o a una
-verifica sull'infrastruttura Cloudflare remota.
+## Contenuti e richiesta preliminare
 
-Il portfolio presenta un solo studio visivo, non le tre schede richieste dall'MVP
-completo. Il questionario, le sue validazioni, il ripristino e la copia della
-bozza sono esclusi da questa consegna. Audit completo di accessibilità,
-compatibilità tra browser e revisione finale del deploy restano alle successive
-milestone, che non sono state avviate. Gli advisory della catena dipendenze vanno
-rivalutati prima della pubblicazione. Non sono rivendicati risultati commerciali,
-metriche prestazionali o conformità WCAG non misurati.
+Studio presenta pratica, metodo e criteri. Servizi esplicita ambiti ed elaborati
+concettuali con collegamenti ai progetti. Contatti fornisce orientamento e FAQ,
+chiarendo l'assenza di recapiti operativi. Non sono inventati clienti, premi,
+titoli o testimonianze.
+
+La richiesta preliminare anticipa i temi del futuro percorso e mostra un
+facsimile statico. Non contiene campi, step interattivi, persistenza, generazione,
+copia o invio. La dichiarazione di indisponibilità del questionario è esplicita.
+
+## Architettura e prove
+
+Qwik City, rendering SSR, routing e adapter Cloudflare Pages sono preservati.
+I dati dei progetti sono locali e tipizzati; due componenti condivisi servono
+archivio e schede. Non sono state aggiunte dipendenze, API business o servizi.
+
+TypeScript strict, ESLint Qwik, test della navigazione e test HTTP del worker
+locale verificano l'implementazione. Il controllo visuale comprende desktop,
+mobile, archivio, scheda e facsimile. Esiti, comandi e catture sono nel
+[WORKLOG.md](WORKLOG.md). I risultati locali non attestano un deploy remoto,
+prestazioni misurate o conformità WCAG completa.
+
+## Attività residue
+
+Milestone 3: questionario con validazioni, riepilogo modificabile, ripristino e
+testo copiabile, senza invio e senza dati personali obbligatori. Milestone 4:
+audit esteso di accessibilità, compatibilità browser e preparazione finale al
+deploy. Gli advisory della catena dipendenze già registrati nella foundation
+restano da rivalutare prima di pubblicare. Nessuna milestone successiva avviata.

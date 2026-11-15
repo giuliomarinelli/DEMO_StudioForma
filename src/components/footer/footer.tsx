@@ -7,25 +7,31 @@ export const Footer = component$(() => (
     <div class="shell">
       <div class="footer-top">
         <div>
-          <p class="eyebrow">Ogni spazio ha un inizio</p>
+          <p class="eyebrow">Studio Forma / Architettura e ricerca</p>
           <p class="footer-title">
-            Facciamo spazio
+            Metodo.
             <br />
-            alle idee.
+            Materia. Forma.
           </p>
         </div>
-        <a class="button button-light" href="/richiedi-un-progetto/">
-          Il tuo punto di partenza
-          <Arrow diagonal />
-        </a>
+        <div class="footer-action">
+          <p>
+            Consulta l'impostazione della richiesta preliminare. Il percorso
+            guidato non è ancora attivo.
+          </p>
+          <a class="button button-light" href="/richiedi-un-progetto/">
+            Richiesta preliminare
+            <Arrow diagonal />
+          </a>
+        </div>
       </div>
       <div class="footer-bottom">
         <a href="/" class="footer-wordmark" aria-label="Studio Forma, homepage">
-          studio forma.
+          studio forma<span>.</span>
         </a>
         <nav
           aria-label="Navigazione a piè di pagina"
-          class="flex flex-wrap gap-x-5 gap-y-3"
+          class="flex flex-wrap gap-x-6 gap-y-3"
         >
           {navigation.map((item) => (
             <a key={item.href} href={item.href}>
@@ -33,7 +39,7 @@ export const Footer = component$(() => (
             </a>
           ))}
         </nav>
-        <span class="text-xs">Architettura, in forma di demo.</span>
+        <span class="technical-label">SF / Edizione dimostrativa 2026</span>
       </div>
       <p class="demo-note">
         <span class="demo-dot" aria-hidden="true" />

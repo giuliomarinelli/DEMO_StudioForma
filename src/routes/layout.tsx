@@ -8,8 +8,8 @@ export default component$(() => (
       Vai al contenuto
     </a>
     <div class="demo-banner">
-      Uno studio immaginario. Un modo concreto di pensare lo spazio.
-      <span> Esperienza demo</span>
+      <span>SF / DEMO</span> Studio di architettura fittizio. Progetti
+      concettuali, nessun invio reale.
     </div>
     <Header />
     <main id="contenuto" tabIndex={-1}>

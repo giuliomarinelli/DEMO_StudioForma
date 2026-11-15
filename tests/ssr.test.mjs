@@ -4,15 +4,38 @@ import { existsSync, readFileSync } from "node:fs";
 
 const origin = process.env.SSR_TEST_ORIGIN || "http://127.0.0.1:8794";
 const pages = [
-  ["/", "Studio Forma — Architettura per abitare", "Lo spazio,"],
-  ["/studio/", "Lo studio — Studio Forma", "Prima le persone. Poi le forme."],
-  ["/servizi/", "Servizi — Studio Forma", "Un pensiero d'insieme."],
-  ["/portfolio/", "Portfolio — Studio Forma", "Esercizi di spazio."],
-  ["/contatti/", "Contatti — Studio Forma", "Il dialogo è il primo disegno."],
+  ["/", "Studio Forma — Architettura, materia, metodo", "Spazio, materia,"],
+  ["/studio/", "Lo studio — Studio Forma", "Metodo prima della forma."],
+  ["/servizi/", "Servizi — Studio Forma", "Tre ambiti. Un metodo di progetto."],
+  [
+    "/portfolio/",
+    "Portfolio — Studio Forma",
+    "Tre contesti. Tre trasformazioni.",
+  ],
+  [
+    "/contatti/",
+    "Contatti — Studio Forma",
+    "Un confronto comincia dai dati di partenza.",
+  ],
   [
     "/richiedi-un-progetto/",
     "Richiedi un progetto — Studio Forma",
-    "Diamo un inizio alla tua idea.",
+    "Definire il quadro di partenza.",
+  ],
+  [
+    "/portfolio/corte-01/",
+    "Corte 01 — Studio Forma",
+    "Il vuoto come elemento distributivo.",
+  ],
+  [
+    "/portfolio/officina-02/",
+    "Officina 02 — Studio Forma",
+    "Una struttura esistente, un nuovo programma.",
+  ],
+  [
+    "/portfolio/interno-03/",
+    "Interno 03 — Studio Forma",
+    "Abitare uno spazio, distribuire le possibilità.",
   ],
 ];
 
@@ -58,9 +81,33 @@ for (const [path, title, content] of pages) {
     assert.match(document, /<main[^>]+id="contenuto"/);
     assert.equal((document.match(/<h1\b/g) || []).length, 1);
     assert.ok(
-      !/<form\b/.test(document),
+      !/<(?:form|input|textarea|select)\b/.test(document),
       "nessun invio o questionario anticipato",
     );
+    if (path.startsWith("/portfolio/") && path !== "/portfolio/") {
+      assert.ok(
+        text.includes(
+          "Studio concettuale · Progetto fittizio · Non realizzato",
+        ),
+      );
+      assert.ok(text.includes("Superficie di studio"));
+      assert.ok(text.includes("Contesto"));
+      assert.ok(text.includes("Tre scelte, un sistema."));
+      assert.ok(text.includes("Materiali e carattere."));
+      assert.ok(text.includes("Progetto interamente fittizio."));
+    }
+    if (path === "/portfolio/") {
+      for (const slug of ["corte-01", "officina-02", "interno-03"]) {
+        assert.ok(
+          document.includes(`href="/portfolio/${slug}/"`),
+          "scheda collegata: " + slug,
+        );
+      }
+    }
+    if (path === "/richiedi-un-progetto/") {
+      assert.ok(text.includes("il questionario non è ancora attivo."));
+      assert.ok(text.includes("Nessun dato è stato raccolto o generato."));
+    }
   });
 }
 

@@ -173,3 +173,143 @@ Queste attività residue non sono state avviate. Nessun deploy o cambiamento ai
 servizi Cloudflare, nessun merge/rebase/force push; commit e push limitati al
 branch `feature/mvp-foundation`, con firma GPG disabilitata solo per ciascun
 comando `git -c commit.gpgsign=false commit`.
+
+## 2026-11-15 — Milestone 2: identità tecnica e contenuti
+
+### Perimetro e stato iniziale
+
+Prosecuzione autorizzata sul branch esistente `feature/mvp-foundation`, partendo
+da `c90f4399bfe735ae279ee1bf756993d8b946955d`. Working tree pulito e riferimento
+remoto del branch coincidente, verificati con `git status --short --branch`,
+`git log -3 --oneline` e `git ls-remote origin refs/heads/feature/mvp-foundation`.
+Letti AGENTS, MVP e tutti i documenti della foundation. Nessuna modifica a
+`AGENTS.md` o `docs/MVP.md`, nessun nuovo branch, subagente o worktree.
+
+Obiettivo: nuova identità contemporanea, rigorosa e sperimentale, contenuti
+completi, tre schede e preparazione visuale della richiesta. Nessun questionario
+interattivo, backend business o servizio aggiuntivo.
+
+### Interventi e motivazioni
+
+1. Definita la direzione in `docs/BRAND_DIRECTION.md`: grafite `#171C20`, cemento
+   `#EAE9E4`, blu tecnico `#2F59C4`, acciaio `#86919A`; titoli sans-serif,
+   griglie, registri, numerazioni e cartigli. Il testo secondario usa neutri
+   più scuri dell'acciaio per mantenere leggibilità sul fondo chiaro.
+2. Sostituito il design system in `src/global.css`, preservando Tailwind e i
+   token `@theme`. Eliminati verde/lime e corsivo serif. Aggiornati favicon,
+   manifest e theme-color, senza cambiare dipendenze o configurazione SSR.
+3. Ricomposta la homepage: registro, titolo ampio a tutta larghezza, descrizione
+   sintetica, tavola volumetrica, posizione dello studio, archivio, ambiti e
+   introduzione alla richiesta. Non sono stati consultati o modificati altri siti.
+4. Realizzate tre tavole SVG originali per Corte 01, Officina 02 e Interno 03.
+   La vecchia illustrazione verde è stata rimossa dai sorgenti. I riferimenti
+   X/Y/Z sono coordinate locali astratte; le tavole sono schemi non in scala.
+   Nessun asset esterno o font da scaricare; provenienza e uso sono documentati.
+5. Introdotto `src/lib/projects.ts` con tre record tipizzati. Estratti soltanto
+   `ProjectCard` e `ProjectDetail`, riusati da homepage, archivio e schede. Le
+   tre pagine hanno rotte esplicite in `src/routes/portfolio/`, senza API o
+   caricamento dati remoto. Un helper produce i metadati delle singole schede.
+6. Completate le schede con contesto, programma, superficie ipotetica, domanda,
+   ipotesi, tre scelte, materiali e navigazione al progetto successivo. Lista e
+   dettaglio dichiarano il carattere concettuale/fittizio; nessuna realizzazione,
+   commessa, misura certificata o prestazione viene presentata come reale.
+7. Completate Studio, Servizi e Contatti. Metodo e ambiti sono specifici;
+   gli elaborati restano concettuali. Contatti usa collegamenti utili e FAQ
+   native `details/summary`, senza recapiti, team o riconoscimenti inventati.
+8. Preparata Richiedi un progetto con tre nuclei informativi e un facsimile
+   statico riconoscibile. Nessun campo, step interattivo, generazione, copia,
+   salvataggio o invio. Riferimenti alle milestone sono confinati ai documenti,
+   mentre l'interfaccia descrive chiaramente ciò che è disponibile.
+9. Preservato il menu Qwik e aggiunto `aria-current="location"` a Portfolio
+   nelle schede figlie. Esteso il test di navigazione per questo comportamento.
+   Aggiornati i test HTTP a nove pagine, verificando contenuti delle schede,
+   collegamenti dall'archivio e assenza di controlli del questionario.
+10. Aggiornati README, ARCHITECTURE, DEPLOYMENT e CASE_STUDY. Conservate le
+    catture della foundation come storia e aggiunte catture distinte `m2-*`.
+
+### Comandi e verifiche
+
+Dipendenze già presenti e input di installazione invariati: non è stata
+necessaria una nuova installazione. Non modificati package.json o lockfile.
+Comandi eseguiti dalla radice del repository:
+
+```powershell
+npm run fmt
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm run serve
+npm run test.ssr
+```
+
+Il server di verifica usa esclusivamente Wrangler locale e la build di
+produzione su `127.0.0.1:8794`. Nessun login o deploy. Esiti finali e controlli
+browser:
+
+| Verifica | Risultato finale |
+| --- | --- |
+| `npm run typecheck` | Superato, TypeScript strict |
+| `npm run lint` | Superato, zero errori/warning |
+| `npm test` | Superato, 3 test del menu e della posizione nel portfolio |
+| `npm run build` | Superato, client e server SSR, tipi e lint |
+| `npm run test.ssr` | Superato, 11 test sulla build di produzione in Wrangler |
+| `npm run fmt.check` | Superato |
+| Browser Playwright | Superato, 36 combinazioni pagina/larghezza e interazioni sotto elencate |
+| Diff specifiche, dipendenze e adapter | Nessuna modifica |
+
+Le richieste HTTP dirette coprono le nove pagine e verificano contenuti utili,
+titoli, descrizioni, canonical, lingua, H1 unico e dichiarazione demo dopo aver
+rimosso gli script dal documento. Le schede espongono i dati di progetto e il
+carattere fittizio già nell'HTML SSR. Verificati anche gli artefatti worker/client,
+l'assenza di homepage SSG, la 404 e l'assenza di form o controlli del questionario.
+La seconda esecuzione dei test SSR, dopo le correzioni visuali, è passata.
+
+Controllo browser in una scheda dedicata della sessione Playwright, chiusa alla
+fine, sempre contro la build di produzione locale:
+
+- Nove pagine a 320, 390, 768 e 1440 px: nessun overflow orizzontale, un H1,
+  immagini caricate e nessun campo/form. Tutte le 36 combinazioni superate.
+- Primo Tab sullo skip link, outline visibile, Enter con focus sul main.
+- Apertura menu, Escape con ritorno del focus e navigazione reale
+  archivio → Corte 01. Link Portfolio riconosciuto come posizione corrente.
+- CTA attiva di richiesta nel menu mobile: testo `rgb(234, 233, 228)` sul
+  fondo blu, non dello stesso colore del fondo.
+- Apertura delle FAQ native in Contatti.
+- Nessun evento `pageerror` nel contesto delle verifiche.
+
+Catture full page aggiornate dopo le correzioni, aperte e controllate:
+
+- [Home desktop 1440×1000](evidence/m2-home-desktop.png)
+- [Home mobile 390×844](evidence/m2-home-mobile.png)
+- [Portfolio desktop](evidence/m2-portfolio-desktop.png)
+- [Scheda Corte 01 mobile](evidence/m2-project-mobile.png)
+- [Anteprima richiesta desktop](evidence/m2-request-desktop.png)
+
+Il browser disponibile tramite Playwright non costituisce una matrice
+Safari/Firefox né una prova con screen reader. Nessuna certificazione WCAG
+completa o metrica prestazionale viene dedotta da questi controlli. Nessun
+nuovo audit npm eseguito: gli advisory riportati nella sezione foundation sono
+storici; dipendenze e lockfile sono invariati in questa milestone.
+
+### Problemi rilevati e correzioni
+
+- Il DOM leggero del test runner Qwik restituisce `undefined` per un selettore
+  senza risultati, anziché `null`: la nuova asserzione sul link attivo è stata
+  adattata all'assenza dell'elemento. I test sono stati rieseguiti con successo.
+- La prima cattura mobile mostrava un'area insufficiente per la freccia nel
+  cartiglio della hero. Aumentata l'altezza minima e portato il bersaglio del
+  link a 44×44 px, senza modificare l'ordine dei contenuti.
+- La revisione dei selettori responsive ha individuato una sovrapposizione tra
+  colore del link attivo e fondo della CTA di richiesta. Reso esplicito il
+  testo cemento sul fondo blu nel menu mobile.
+
+### Residui
+
+La milestone 3 resta da avviare. La revisione estesa di accessibilità e browser
+resta alla milestone 4. Le dipendenze e gli advisory della foundation non sono
+stati oggetto di aggiornamento o remediation in questo intervento.
+Nessun merge, rebase, force push, deployment o modifica ai servizi Cloudflare.
+Server locale della sessione arrestato dopo le verifiche. Commit e push
+limitati al branch esistente, con GPG disabilitato soltanto per il comando di
+commit, senza modifica permanente della configurazione Git.

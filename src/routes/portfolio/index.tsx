@@ -1,51 +1,47 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import { PageIntro } from "~/components/ui/page-intro";
-import casaCorte from "~/media/casa-corte.svg?url";
+import { ProjectCard } from "~/components/projects/project-card";
+import { projects } from "~/lib/projects";
 
 export default component$(() => (
   <>
     <PageIntro
       number="03 /"
-      label="Il portfolio"
-      title="Esercizi di spazio. Possibilità di vita."
-      description="Un taccuino di architetture immaginarie. La luce e il rapporto tra pieni e vuoti guidano il primo studio visivo della demo."
+      label="Archivio dei progetti"
+      title="Tre contesti. Tre trasformazioni."
+      description="Una casa a corte, un involucro industriale, un appartamento urbano. Tre studi autonomi indagano come struttura, distribuzione e materia possono rispondere a programmi diversi."
     />
     <section
-      class="detail-section shell concept-panel"
-      aria-labelledby="concept-title"
+      class="shell portfolio-archive"
+      aria-label="Tre progetti concettuali"
     >
-      <img
-        src={casaCorte}
-        width="1000"
-        height="1100"
-        alt="Studio volumetrico originale: casa a corte con vetrate, terrazza e ulivo."
-      />
-      <div>
-        <p class="eyebrow">Taccuino / 01 — Concept fittizio</p>
-        <h2 id="concept-title">Casa della luce</h2>
-        <p class="body-copy">
-          Volumi essenziali si raccolgono intorno a uno spazio aperto. Una
-          terrazza a gradoni diventa una soglia lenta tra la casa e il
-          paesaggio.
-        </p>
-        <aside class="availability-note">
-          Questa illustrazione è un concept originale, non un edificio
-          realizzato. Le tre schede di progetto complete previste dall'MVP
-          saranno sviluppate nella milestone dedicata ai contenuti.
-        </aside>
+      <div class="archive-register">
+        <span class="eyebrow">Archivio / 01—03</span>
+        <span class="technical-label">
+          Studi concettuali · Fittizi · Non realizzati
+        </span>
       </div>
+      <div class="project-grid portfolio-grid">
+        {projects.map((project) => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
+      <p class="project-disclaimer">
+        Tutti i progetti sono stati ideati per questa demo. Superfici, contesti
+        e programmi sono ipotetici. I disegni sono schemi originali non in scala
+        e non documentano incarichi reali.
+      </p>
     </section>
   </>
 ));
-
 export const head: DocumentHead = {
   title: "Portfolio — Studio Forma",
   meta: [
     {
       name: "description",
       content:
-        "Il taccuino di Studio Forma: Casa della luce, primo concept architettonico originale e fittizio. Struttura iniziale del portfolio demo.",
+        "Corte 01, Officina 02 e Interno 03: tre schede architettoniche con tavole originali, dati di studio e scelte progettuali. Progetti concettuali interamente fittizi.",
     },
   ],
 };

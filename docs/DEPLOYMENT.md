@@ -60,7 +60,7 @@ npm run test.ssr
 ```
 
 Il test verifica artefatti, assenza di homepage prerenderizzata, HTTP 200 delle
-sei rotte, contenuti leggibili, lingua italiana, H1, titolo, descrizione,
+nove rotte, contenuti leggibili, lingua italiana, H1, titolo, descrizione,
 canonical, dichiarazione demo e HTTP 404 per una rotta inesistente.
 Legge l'HTML della risposta ed elimina gli script prima delle asserzioni:
 non esegue JavaScript client-side. Per un'ispezione manuale:
@@ -68,6 +68,7 @@ non esegue JavaScript client-side. Per un'ispezione manuale:
 ```powershell
 curl.exe http://127.0.0.1:8794/
 curl.exe http://127.0.0.1:8794/studio/
+curl.exe http://127.0.0.1:8794/portfolio/corte-01/
 ```
 
 Se si cambia porta, aggiornare lo script `serve` oppure lanciare Wrangler con la
@@ -106,6 +107,10 @@ prima assicurarsi che il working tree sia pulito e conservare il branch feature;
 poi selezionare `develop` con `git switch develop`. Non usare reset/clean e non
 riscrivere la cronologia pubblicata. Un eventuale annullamento dei commit tramite
 `git revert` è una successiva operazione da concordare, non eseguita qui.
+
+Per confrontare la sola revisione visuale/contenuti della milestone 2 con la
+foundation, il riferimento precedente è `c90f439`. Non è stato eseguito alcun
+rollback. Le dipendenze e l'adapter sono invariati in questa milestone.
 
 ## Riferimenti ufficiali
 

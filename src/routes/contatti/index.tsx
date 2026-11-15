@@ -7,41 +7,101 @@ export default component$(() => (
   <>
     <PageIntro
       number="04 /"
-      label="I contatti"
-      title="Il dialogo è il primo disegno."
-      description="Un progetto comincia dal mettere a fuoco un desiderio. In questa demo puoi esplorare il modo in cui uno studio potrebbe accompagnare quel primo passo."
+      label="Contatti e orientamento"
+      title="Un confronto comincia dai dati di partenza."
+      description="Tipo di intervento, caratteri dell'immobile e obiettivi permettono di impostare una prima conversazione di progetto. Questa pagina chiarisce il perimetro dimostrativo e indica come orientarsi nel sito."
     />
-    <section class="detail-section shell">
-      <div class="detail-grid">
-        <h2>Uno spazio per orientarsi.</h2>
-        <div class="body-copy">
-          <p>
-            Che cosa vorresti cambiare? Quali ambienti vivi di più? Quale
-            sensazione cerchi quando torni a casa? Sono le domande da cui
-            partire per raccontare un'idea.
-          </p>
-          <a href="/richiedi-un-progetto/" class="text-link">
-            Il punto di partenza del progetto
-            <Arrow />
-          </a>
-          <aside class="availability-note">
-            Non esistono una sede, un numero telefonico o un indirizzo email
-            operativo di Studio Forma. Non sono disponibili invii o appuntamenti
-            reali. Nessun dato viene richiesto in questa fase.
-          </aside>
+    <section class="shell contact-panel" aria-labelledby="contact-status">
+      <div class="contact-status">
+        <span class="eyebrow">SF / Stato dello studio</span>
+        <h2 id="contact-status">
+          Studio fittizio.
+          <br />
+          Nessun recapito operativo.
+        </h2>
+        <p>
+          Non sono disponibili sede, email, telefono o appuntamenti reali.
+          Nessuna comunicazione viene trasmessa attraverso questo sito.
+        </p>
+        <span class="status-label">DEMO / Nessun invio</span>
+      </div>
+      <div class="contact-directions">
+        <h2>Per orientare la richiesta.</h2>
+        <p class="body-copy">
+          Prima di descrivere un intervento, individua il tipo di spazio e il
+          cambiamento che vorresti ottenere. Non servono dati personali per
+          esplorare questa demo.
+        </p>
+        <ul>
+          {[
+            {
+              title: "Conoscere il metodo",
+              text: "Profilo dello studio e criteri di lettura.",
+              href: "/studio/",
+            },
+            {
+              title: "Confrontare gli ambiti",
+              text: "Architettura, interni e recupero.",
+              href: "/servizi/",
+            },
+            {
+              title: "Preparare un primo quadro",
+              text: "Anteprima della futura richiesta preliminare.",
+              href: "/richiedi-un-progetto/",
+            },
+          ].map((item) => (
+            <li key={item.href}>
+              <a href={item.href}>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+                <Arrow diagonal />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+    <section class="shell editorial-section" aria-labelledby="contact-faq">
+      <p class="eyebrow">04.1 / Domande frequenti</p>
+      <div>
+        <h2 id="contact-faq">Come funziona la demo.</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Posso contattare davvero lo studio?</summary>
+            <p>
+              Studio Forma non è uno studio operativo. Non sono presenti canali
+              di contatto, richieste spedite o prenotazioni.
+            </p>
+          </details>
+          <details>
+            <summary>Le opere del portfolio sono state realizzate?</summary>
+            <p>
+              No. Tutte e tre le schede descrivono studi concettuali fittizi,
+              con contesti e misure ipotetici.
+            </p>
+          </details>
+          <details>
+            <summary>Il percorso di richiesta è già disponibile?</summary>
+            <p>
+              La struttura è consultabile nella pagina Richiedi un progetto. Il
+              percorso interattivo non è ancora disponibile: questa versione
+              mostra soltanto un'anteprima.
+            </p>
+          </details>
         </div>
       </div>
     </section>
   </>
 ));
-
 export const head: DocumentHead = {
   title: "Contatti — Studio Forma",
   meta: [
     {
       name: "description",
       content:
-        "Come iniziare a raccontare un progetto nella demo Studio Forma. Nessuna sede o contatto operativo, nessun invio reale.",
+        "Contatti e orientamento nella demo Studio Forma: nessuna sede o recapito operativo, nessun invio reale. Indicazioni per consultare servizi, metodo e richiesta preliminare.",
     },
   ],
 };

@@ -60,7 +60,12 @@ export const Header = component$(() => {
               key={item.href}
               href={item.href}
               aria-current={
-                location.url.pathname === item.href ? "page" : undefined
+                location.url.pathname === item.href
+                  ? "page"
+                  : item.href !== "/" &&
+                      location.url.pathname.startsWith(item.href)
+                    ? "location"
+                    : undefined
               }
               onClick$={() => {
                 menuOpen.value = false;
