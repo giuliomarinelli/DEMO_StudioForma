@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "Studio Forma — Demo di architettura",
+  "short_name": "Studio Forma",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f4f1e9",
+  "description": "Studio di architettura fittizio. Esperienza dimostrativa."
+}
