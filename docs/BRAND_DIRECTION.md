@@ -83,16 +83,22 @@ slogan generici e metafore prive di contenuto progettuale.
 Nessuna sede, recapito, biografia o certificazione inventata. Contatti e Servizi
 chiariscono che non è disponibile una prestazione professionale reale.
 
-## Richiesta preliminare
+## Richiesta preliminare / dalla milestone 3
 
-La pagina anticipa tre nuclei informativi: inquadrare l'intervento, orientare
-obiettivi e vincoli, rileggere la sintesi. Un facsimile statico mostra la gerarchia
-del futuro documento. Il cartiglio «FACSIMILE» e il messaggio «questionario non
-ancora attivo» devono essere visibili.
+Il generatore segue quattro passaggi: immobile, obiettivi, risorse e riepilogo.
+La colonna di registro espone numeri e avanzamento; l'area principale presenta
+scelte, istruzioni e validazioni. Lo stile conserva bordi netti, accenti blu,
+corpo leggibile e metadati monospaziati. Il rosso scuro è un colore funzionale
+riservato agli errori, sempre accompagnati da testo.
 
-Non sono presenti campi, avanzamento interattivo, salvataggio, generazione o copia.
-Non viene raccolto né trasmesso alcun dato. La milestone 3 implementerà il flusso
-verticale; questa milestone definisce soltanto contenuti e presentazione.
+Il documento finale mantiene cartiglio grafite, codice SF—BP, gerarchia delle
+sezioni e dichiarazione «DEMO / NON INVIATO». Il contenuto deriva dalle risposte,
+non dal precedente facsimile. Il riepilogo è modificabile e il testo può essere
+copiato. Se la copia automatica è negata, si offre la selezione manuale.
+
+Nessun invio reale o dato personale richiesto. La permanenza in memoria e la
+perdita delle risposte all'uscita/ricarica sono dichiarate. Il ripristino richiede
+conferma e non è confuso con l'azione di navigazione indietro.
 
 ## Criteri di continuità
 

@@ -1,7 +1,7 @@
 # Studio Forma
 
-Demo di uno studio di architettura fittizio. Milestone 2: identità visiva grafite,
-cemento e blu tecnico, contenuti completi e tre schede di progetto concettuale.
+Demo di uno studio di architettura fittizio. Milestone 3: generatore interattivo di brief
+architettonici, identità grafite/cemento/blu e tre schede di progetto concettuale.
 Studio, contenuti e operazioni sono simulati; nessuna richiesta viene inviata.
 
 ## Avvio locale
@@ -48,6 +48,7 @@ business, database, autenticazione o servizio esterno applicativo.
 - `src/routes/`: routing file-based, layout, sei pagine principali e tre schede.
 - `src/components/`: layout, head SEO, primitive UI e componenti delle schede.
 - `src/lib/projects.ts`: dati dimostrativi tipizzati condivisi tra archivio e schede.
+- `src/components/brief/` e `src/lib/brief.ts`: questionario Qwik, validazioni e documento locale.
 - `src/global.css`: token e design responsive; `src/media/`: asset originali.
 - `adapters/cloudflare-pages/`: configurazione SSR di produzione.
 - `tests/ssr.test.mjs`: verifica HTTP senza eseguire JavaScript client.
@@ -62,9 +63,15 @@ HTTP; il menu mobile usa stato Qwik e supporta Escape.
 
 Homepage tipografica con tavola architettonica, tre SVG originali e pagine complete.
 Corte 01, Officina 02 e Interno 03 presentano contesto, superficie ipotetica,
-programma, domanda, criteri e materiali. Il questionario non è implementato:
-la pagina dedicata mostra struttura prevista e facsimile statico. Il flusso
-interattivo resta alla milestone 3. Nessun contatto operativo, form o invio reale.
+programma, domanda, criteri e materiali. Il questionario raccoglie intervento,
+immobile, superficie, obiettivi, stile, budget facoltativo, tempi e descrizione.
+Riepilogo modificabile, documento strutturato, copia e ripristino con conferma.
+Nessun contatto operativo, dato personale richiesto o invio reale.
+
+Le risposte restano in memoria nella pagina: avanti/indietro e modifiche le
+conservano; ricaricare o lasciare la pagina le elimina. Nessun localStorage,
+sessionStorage o database. La copia richiede il supporto/permesso Clipboard del
+browser; se negato compare un testo selezionabile da copiare manualmente.
 
 L'audit npm segnala advisory transitivi dello stack stabile: dettaglio e limiti
 in [WORKLOG](docs/WORKLOG.md). La consegna non è una certificazione di sicurezza

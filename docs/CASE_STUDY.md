@@ -5,7 +5,7 @@
 Rappresentare uno studio di architettura contemporanea, rigoroso e sperimentale
 attraverso un archivio editoriale di progetti fittizi. La milestone 1 ha preparato
 Qwik City SSR e la struttura del sito. La milestone 2 completa identità e contenuti.
-Il questionario che produrrà una bozza preliminare copiabile resta alla milestone 3.
+La milestone 3 aggiunge il generatore di brief, con stato locale e nessun invio.
 
 ## Evoluzione dell'identità
 
@@ -41,26 +41,42 @@ concettuali con collegamenti ai progetti. Contatti fornisce orientamento e FAQ,
 chiarendo l'assenza di recapiti operativi. Non sono inventati clienti, premi,
 titoli o testimonianze.
 
-La richiesta preliminare anticipa i temi del futuro percorso e mostra un
-facsimile statico. Non contiene campi, step interattivi, persistenza, generazione,
-copia o invio. La dichiarazione di indisponibilità del questionario è esplicita.
+Il generatore raccoglie intervento, immobile, superficie, obiettivi, stile,
+budget facoltativo, tempi e descrizione. Quattro passaggi separano raccolta e
+revisione. Messaggi espliciti guidano la correzione; tornare indietro o modificare
+una sezione non cancella le altre risposte.
+
+Il documento finale riprende il linguaggio delle tavole: cartiglio grafite,
+metadati monospaziati, sezioni e dichiarazione dimostrativa. La generazione è
+deterministica e locale, senza AI remota. La copia usa gli appunti del browser;
+se non disponibile si offre un testo selezionabile. Nessun successo simulato
+viene mostrato dopo un errore della Clipboard API.
+
+Le risposte sono conservate soltanto nella pagina e vengono perse al reload o
+all'uscita. Il ripristino è intenzionale e richiede conferma. Non sono richiesti
+nomi o recapiti, né sono presenti invii o persistenza. L'utente può ordinare le
+esigenze e ottenere una traccia, senza trasformarla in preventivo o consulenza.
 
 ## Architettura e prove
 
 Qwik City, rendering SSR, routing e adapter Cloudflare Pages sono preservati.
 I dati dei progetti sono locali e tipizzati; due componenti condivisi servono
-archivio e schede. Non sono state aggiunte dipendenze, API business o servizi.
+archivio e schede. Non sono state aggiunte dipendenze, API business o servizi. Validazioni e formato
+del documento sono separati dal componente Qwik e verificati con test locali.
 
 TypeScript strict, ESLint Qwik, test della navigazione e test HTTP del worker
-locale verificano l'implementazione. Il controllo visuale comprende desktop,
-mobile, archivio, scheda e facsimile. Esiti, comandi e catture sono nel
+locale verificano l'implementazione. Le catture desktop/mobile di archivio,
+scheda e facsimile documentano la milestone 2. Il controllo browser della
+milestone 3 è bloccato da due timeout del servizio Playwright MCP; non sono
+attestati focus, resa visuale o copia reale negli appunti. I test del componente
+Qwik non eseguono il focus e simulano la Clipboard API. Esiti, comandi e catture sono nel
 [WORKLOG.md](WORKLOG.md). I risultati locali non attestano un deploy remoto,
 prestazioni misurate o conformità WCAG completa.
 
 ## Attività residue
 
-Milestone 3: questionario con validazioni, riepilogo modificabile, ripristino e
-testo copiabile, senza invio e senza dati personali obbligatori. Milestone 4:
+Funzionalità della milestone 3 implementate; resta la verifica browser
+bloccata dal servizio MCP. Milestone 4:
 audit esteso di accessibilità, compatibilità browser e preparazione finale al
 deploy. Gli advisory della catena dipendenze già registrati nella foundation
-restano da rivalutare prima di pubblicare. Nessuna milestone successiva avviata.
+restano da rivalutare prima di pubblicare. La milestone 4 non è stata avviata.

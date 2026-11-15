@@ -140,11 +140,11 @@ export default component$(() => (
             prima del progetto.
           </h2>
           <p>
-            Un percorso per ordinare contesto, esigenze e priorità. Scopri come
-            sarà strutturata la futura bozza di richiesta.
+            Un percorso per ordinare contesto, esigenze e priorità. Compila il
+            questionario e prepara una bozza da rileggere e copiare.
           </p>
           <a class="text-link" href="/richiedi-un-progetto/">
-            Consulta l'anteprima
+            Prepara il brief
             <Arrow />
           </a>
         </div>

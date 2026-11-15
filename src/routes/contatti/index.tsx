@@ -46,7 +46,7 @@ export default component$(() => (
             },
             {
               title: "Preparare un primo quadro",
-              text: "Anteprima della futura richiesta preliminare.",
+              text: "Questionario guidato e brief preliminare copiabile.",
               href: "/richiedi-un-progetto/",
             },
           ].map((item) => (
@@ -85,9 +85,9 @@ export default component$(() => (
           <details>
             <summary>Il percorso di richiesta è già disponibile?</summary>
             <p>
-              La struttura è consultabile nella pagina Richiedi un progetto. Il
-              percorso interattivo non è ancora disponibile: questa versione
-              mostra soltanto un'anteprima.
+              Sì. Nella pagina Richiedi un progetto puoi compilare un
+              questionario, modificare il riepilogo e copiare il brief. Le
+              risposte restano nella pagina e non vengono inviate.
             </p>
           </details>
         </div>

@@ -1,11 +1,11 @@
 # Architettura — Studio Forma
 
-## Perimetro dopo la milestone 2
+## Perimetro dopo la milestone 3
 
 Applicazione Qwik City con rendering server a ogni richiesta alle pagine pubbliche.
 Lo studio, i tre progetti concettuali e i servizi sono fittizi. La milestone 2
-completa i contenuti e il portfolio, rinnova identità visiva e layout e prepara
-un'anteprima statica della richiesta. Non implementa il questionario.
+ha completato contenuti, portfolio e identità visiva; la milestone 3 aggiunge
+il generatore interattivo di brief con stato locale.
 Non esistono database, autenticazione, CMS, invii o API
 business. Le Pages Functions sono esclusivamente il runtime del rendering SSR.
 
@@ -40,6 +40,8 @@ src/
   global.css                            # tema, layout, responsive e focus
   lib/navigation.ts                     # destinazioni condivise
   lib/projects.ts                       # tre studi tipizzati, dati mock locali
+  lib/brief.ts                          # modello, validazione e formato del brief
+  lib/brief.test.tsx                     # test delle regole e del documento
   media/{corte-01,officina-02,interno-03}.svg # tavole originali locali
   components/
     header/                             # disclosure menu e test
@@ -47,6 +49,7 @@ src/
     router-head/                        # SEO Qwik City
     ui/                                 # freccia e introduzione pagine
     projects/                           # card archivio e scheda condivisa
+    brief/                              # questionario Qwik e gruppi di scelta
   routes/
     layout.tsx                          # header/main/footer e skip link
     index.tsx                           # homepage
@@ -113,8 +116,55 @@ Ogni pagina esporta il proprio head SSR. Superfici e contesti sono ipotetici e
 il carattere concettuale è dichiarato anche nell'HTML iniziale.
 
 Tema e voce editoriale sono definiti in [BRAND_DIRECTION.md](BRAND_DIRECTION.md).
-La pagina Richiedi un progetto è statica: nuclei informativi e facsimile,
-senza campi, gestione di step, dati salvati, generazione, copia o invio.
+La pagina Richiedi un progetto ospita ora il generatore della milestone 3.
+
+## Generatore di brief / milestone 3
+
+Quattro passaggi: intervento/immobile, obiettivi/stile, budget/tempi/descrizione,
+riepilogo. Dopo la revisione si genera un documento strutturato. Il componente
+Qwik usa useStore per risposte/errori e useSignal per passaggio, revisione,
+risultato, conferma di reset e stato della copia. I gestori QRL eseguono solo
+operazioni locali; nessuna action, routeLoader business, fetch o richiesta di
+invio. Non sono aggiunte dipendenze.
+
+`src/lib/brief.ts` contiene opzioni tipizzate, stato iniziale, validazioni pure,
+sezioni del riepilogo e generatore di testo. Ogni passaggio valida i propri
+campi; la generazione ripete il controllo completo. Le stesse sezioni alimentano
+riepilogo, documento visibile e testo degli appunti, evitando versioni divergenti.
+Le modifiche dal riepilogo conservano gli altri campi e tornano direttamente alla
+revisione dopo la validazione. Il reset richiede una conferma inline.
+
+Vincoli: caratteristiche 10–400 caratteri dopo trim; descrizione 20–2.000;
+superficie maggiore di zero e fino a 100.000 m², massimo due decimali con virgola
+o punto, senza notazione esponenziale. Almeno un obiettivo; scelte verificate
+contro le opzioni. Budget facoltativo per fasce, non stima di costo. Stile può
+essere “Da esplorare insieme” e tempi “Da definire”. I testi liberi sono resi come
+nodi testuali escapati, mai HTML; nel documento mantengono gli a capo.
+
+Persistenza limitata al componente nella pagina. Navigazione interna al percorso
+conserva i valori; ricaricare/lasciare la pagina li perde. Non si usa storage del
+browser. Le risposte non sono mai serializzate verso il server: l'HTML SSR contiene
+solo lo stato iniziale vuoto. Nessun dato personale viene richiesto; i campi liberi
+invitano a non inserire nomi, recapiti o indirizzi.
+
+I controlli sono fieldset/legend e label native, con riepilogo errori annunciato,
+aria-invalid/describedby, focus al titolo del passaggio e progresso leggibile.
+Il contenitore ha role=form ma non è un elemento form HTML: non può effettuare
+un invio nativo, neppure con Enter o JavaScript disattivato. Tutti i pulsanti sono
+type=button; noscript spiega il requisito JavaScript. La pagina e le altre rotte
+restano SSR. Il reset e gli errori hanno gestione esplicita del focus.
+
+Copia con navigator.clipboard.writeText, solo dopo azione dell'utente. Errori o API
+assente mostrano una textarea readonly con il testo completo e il comando per
+selezionarlo. Il successo viene annunciato soltanto dopo la risoluzione della
+Promise. Un contatore invalida copie pendenti quando si torna a modificare o si
+azzera, evitando annunci riferiti a una revisione precedente. Nessun fallback
+deprecato execCommand o permesso richiesto all'apertura della pagina.
+
+Riferimenti: [stato Qwik](https://qwik.dev/docs/core/state/) e
+[eventi Qwik](https://qwik.dev/docs/core/events/). Le API sono quelle del pacchetto
+Qwik 1 installato, non di Qwik 2.
+
 
 ## Limiti e dipendenze
 

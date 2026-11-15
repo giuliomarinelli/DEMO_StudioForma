@@ -16,8 +16,8 @@ export const Footer = component$(() => (
         </div>
         <div class="footer-action">
           <p>
-            Consulta l'impostazione della richiesta preliminare. Il percorso
-            guidato non è ancora attivo.
+            Organizza le esigenze del progetto in un brief preliminare. Compila,
+            rileggi e copia il documento. Nessun invio reale.
           </p>
           <a class="button button-light" href="/richiedi-un-progetto/">
             Richiesta preliminare

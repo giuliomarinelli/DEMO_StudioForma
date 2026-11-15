@@ -62,6 +62,8 @@ npm run test.ssr
 Il test verifica artefatti, assenza di homepage prerenderizzata, HTTP 200 delle
 nove rotte, contenuti leggibili, lingua italiana, H1, titolo, descrizione,
 canonical, dichiarazione demo e HTTP 404 per una rotta inesistente.
+Dalla milestone 3 verifica anche i campi iniziali SSR del questionario, il
+messaggio noscript e l’assenza di form HTML inviabili.
 Legge l'HTML della risposta ed elimina gli script prima delle asserzioni:
 non esegue JavaScript client-side. Per un'ispezione manuale:
 
@@ -110,10 +112,40 @@ riscrivere la cronologia pubblicata. Un eventuale annullamento dei commit tramit
 
 Per confrontare la sola revisione visuale/contenuti della milestone 2 con la
 foundation, il riferimento precedente è `c90f439`. Non è stato eseguito alcun
-rollback. Le dipendenze e l'adapter sono invariati in questa milestone.
+rollback. Le dipendenze e l’adapter sono invariati nelle milestone 2 e 3.
 
 ## Riferimenti ufficiali
 
 - [Qwik City Cloudflare Pages adapter](https://qwik.dev/docs/deployments/cloudflare-pages/)
 - [Cloudflare Pages: sviluppo locale delle Functions](https://developers.cloudflare.com/pages/functions/local-development/)
 - [Tailwind CSS con Qwik](https://tailwindcss.com/docs/installation/framework-guides/qwik)
+
+## Verifica manuale del generatore / milestone 3
+
+Sulla build locale di produzione aprire /richiedi-un-progetto/. Provare Continua
+senza risposte: messaggi comprensibili e focus al riepilogo errori. Compilare:
+
+1. Ristrutturazione; Appartamento; “Appartamento esistente con ambienti separati.”;
+   superficie “95,50”. Verificare il rifiuto di zero o valori negativi.
+2. Riorganizzare gli spazi e Integrare lavoro e abitare; Da esplorare insieme.
+   Indietro e Continua devono mantenere le risposte.
+3. Lasciare budget Non indicato; tempi Da definire; descrizione di almeno 20
+   caratteri, senza dati personali. Raggiungere il riepilogo.
+4. Modificare la prima sezione, portare la superficie a 120, confermare e verificare
+   il valore nel riepilogo. Generare il documento e controllare tutte le sezioni,
+   budget facoltativo non indicato e dichiarazione dimostrativa.
+5. Copiare il brief. Se il browser lo consente, incollare in un editor per verificare
+   il testo. Se il permesso è negato, verificare il messaggio e la copia manuale
+   dalla textarea readonly. Non interpretare un blocco del browser come successo.
+6. Provare Ricomincia da zero: prima mantenere le risposte, poi confermare il reset.
+   Verificare stato vuoto, primo passaggio e nessun documento precedente.
+
+Ripetere con tastiera (Tab, frecce per radio, Space per checkbox, Enter sui
+pulsanti) e schermo stretto. Verificare che nessuna risposta sia inviata come
+richiesta POST o parametro URL. Le risposte non sopravvivono a un reload:
+questa è una scelta esplicita di stato locale, non un salvataggio automatico.
+Il generatore richiede JavaScript; l’HTML e le istruzioni rimangono disponibili
+via SSR e nessun invio nativo è possibile anche senza JavaScript.
+
+Baseline per confrontare la milestone 3: commit caad2a4. Nessun rollback o
+pubblicazione eseguiti. Il report dei controlli effettivi è nel worklog.

@@ -313,3 +313,127 @@ Nessun merge, rebase, force push, deployment o modifica ai servizi Cloudflare.
 Server locale della sessione arrestato dopo le verifiche. Commit e push
 limitati al branch esistente, con GPG disabilitato soltanto per il comando di
 commit, senza modifica permanente della configurazione Git.
+
+## 2026-11-15 — Milestone 3: generatore di brief architettonici
+
+### Perimetro e stato iniziale
+
+Lavoro sul branch esistente `feature/mvp-foundation`, a partire da
+`caad2a47b8502d7e42561eed0177cb40efa310b3`. Working tree inizialmente pulito;
+`git ls-remote origin refs/heads/feature/mvp-foundation` confermava lo stesso
+commit. Letti integralmente AGENTS e MVP, e la documentazione tecnica e visuale
+esistente. Nessun nuovo branch, subagente, worktree o lavoro su altri repository.
+
+Obiettivo: trasformare l'anteprima in un percorso locale funzionante, mantenendo
+Qwik City SSR e l'identità architettonica. Nessuna modifica a specifiche, adapter,
+configurazione di hosting, dipendenze o lockfile.
+
+### Implementazione e decisioni
+
+1. Creato `src/lib/brief.ts`: modello, opzioni, stato iniziale indipendente,
+   validazioni per passaggio e controllo completo prima della generazione.
+   Superficie con punto/virgola, >0 e <=100.000 m², massimo due decimali;
+   caratteristiche 10–400 caratteri e descrizione 20–2.000 dopo trim. Budget
+   per fasce facoltativo, almeno un obiettivo, opzioni controllate.
+2. Implementato `BriefBuilder` con `useStore`, `useSignal` e gestori `$` Qwik.
+   Quattro passaggi: immobile, obiettivi/stile, risorse/tempi/descrizione e
+   riepilogo. `ChoiceGroup` è l'unica astrazione di campo condivisa, usata per
+   i gruppi radio. Nessuna libreria di form o componente React.
+3. Avanti/indietro preservano le risposte. Dal riepilogo ogni sezione è
+   modificabile e torna alla revisione dopo la validazione, senza ripetere i
+   passaggi successivi. Il controllo completo impedisce brief incompleti.
+4. Documento con cartiglio, codice SF—BP, sezioni strutturate e dichiarazione
+   demo/non inviato. Riepilogo, documento e testo copiato usano la stessa
+   sorgente di sezioni. I testi liberi sono escapati da Qwik e mantengono
+   gli a capo; non sono interpretati come HTML.
+5. Copia con Clipboard API dopo click, annuncio di successo solo a Promise
+   risolta. Rifiuto o API assente mostrano testo readonly e selezione manuale.
+   Un contatore invalida gli esiti di copie precedenti dopo modifica/reset.
+6. Ripristino inline con scelta Mantieni/Azzera. Le risposte restano soltanto
+   nella pagina: nessun localStorage, sessionStorage, backend o invio. Reload
+   o uscita le perdono; questa durata è dichiarata prima della compilazione.
+   Non si chiedono dati personali e i testi di aiuto invitano a non inserirli.
+7. Conservati palette e linguaggio delle tavole. Aggiunti layout responsive,
+   progresso, scelte, messaggi e documento finale; rosso scuro solo per errori.
+   Aggiornati i rimandi in home, footer e FAQ perché non descrivano più
+   un'anteprima inattiva.
+8. Accessibilità: fieldset/legend, label, campi obbligatori espliciti,
+   aria-invalid/describedby, riepilogo errori con role=alert, stato della copia
+   con role=status e gestione del focus nel codice. Il contenitore role=form
+   non è un form HTML: nessun submit nativo è possibile, nemmeno senza JS.
+   Noscript spiega il requisito JavaScript per il generatore.
+9. Aggiornati README, ARCHITECTURE, BRAND_DIRECTION, DEPLOYMENT e CASE_STUDY.
+   La procedura manuale completa è in DEPLOYMENT. La milestone 4 non è avviata.
+
+### Verifiche effettivamente eseguite
+
+Dipendenze già installate e invariate; nessuna reinstallazione necessaria.
+Comandi dalla radice del repository:
+
+```powershell
+npm run fmt
+npm run typecheck
+npm run lint
+npm test
+npm run fmt.check
+npm run build
+npm run serve
+npm run test.ssr
+```
+
+| Controllo | Esito |
+| --- | --- |
+| Typecheck strict | Superato |
+| Lint | Superato, zero errori/warning |
+| Unit test e DOM Qwik | Superati, 27 test in 3 file |
+| Formattazione | Superata |
+| Build produzione | Superata, client e server SSR, tipi e lint |
+| Runtime locale Wrangler | Worker compilato e servito su 127.0.0.1:8794 |
+| Verifiche HTTP SSR | Superate, 11 test sulle 9 pagine, artefatti e 404 |
+| Browser Playwright | Bloccato dal servizio MCP; non superato né conteggiato |
+
+I test puri coprono superficie valida/non valida e limiti, trim dei testi,
+obiettivi, scelte sconosciute, budget assente/presente, documento incompleto,
+normalizzazione, aggiornamento e stato iniziale indipendente.
+
+Il test del componente Qwik esegue errori iniziali, compilazione, selezioni,
+avanti/indietro con conservazione, modifica dal riepilogo, generazione, copia
+simulata positiva/negata, testo manuale e reset mantenuto/confermato. Un secondo
+test verifica label, required, riferimenti aria-describedby, aria-invalid,
+riepilogo errori e assenza di submit nativo. Questi test usano il DOM leggero
+Qwik: requestAnimationFrame è simulato senza eseguire il focus; Clipboard è
+simulata. Non dimostrano focus, tastiera o appunti del sistema reale.
+
+Le richieste HTTP alla build di produzione verificano contenuti, SEO, lingua,
+H1 e dichiarazione demo senza eseguire JS. Dalla milestone 3 la pagina del
+generatore deve contenere passaggio iniziale e campi con label già via SSR,
+noscript e nessun form HTML o pulsante submit. Le altre pagine mantengono i
+controlli della milestone 2. Non è stata usata una build CSR o SSG sostitutiva.
+
+### Limite della verifica browser
+
+Tentati `playwright/browser_navigate` e un controllo in una scheda dedicata con
+`playwright/browser_run_code_unsafe`. Entrambi hanno restituito:
+
+```text
+timed out awaiting tools/call after 300s
+```
+
+Il timeout riguarda la chiamata al servizio MCP, non un'asserzione del percorso.
+Il runtime HTTP locale ha risposto regolarmente ai test. Non sono stati
+installati browser o sostituti di automazione nativi. Non sono state create
+catture visuali della milestone 3 e non sono riutilizzate quelle precedenti come
+prova del nuovo questionario. Restano da eseguire controllo visuale responsive,
+focus effettivo, navigazione completa da tastiera e copia reale nel browser.
+Non vengono dichiarate conformità WCAG o compatibilità cross-browser complete.
+
+### Residui e confini
+
+Funzionalità della milestone implementate; limite aperto sulla verifica browser
+per indisponibilità del servizio. Procedura manuale pronta in DEPLOYMENT.
+Nessun nuovo audit npm: gli advisory della foundation rimangono storici e le
+dipendenze non sono cambiate. Nessun merge, rebase, force push, deployment,
+provisioning o modifica ai servizi Cloudflare. Commit/push sul branch corrente,
+con firma GPG disattivata soltanto per ciascun comando commit.
+Server Wrangler della sessione arrestato al termine; nessun processo locale
+lasciato in esecuzione da questa attività.

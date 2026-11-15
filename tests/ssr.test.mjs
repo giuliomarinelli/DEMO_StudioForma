@@ -81,8 +81,8 @@ for (const [path, title, content] of pages) {
     assert.match(document, /<main[^>]+id="contenuto"/);
     assert.equal((document.match(/<h1\b/g) || []).length, 1);
     assert.ok(
-      !/<(?:form|input|textarea|select)\b/.test(document),
-      "nessun invio o questionario anticipato",
+      !/<form\b/.test(document),
+      "nessun form HTML con possibilità di invio nativo",
     );
     if (path.startsWith("/portfolio/") && path !== "/portfolio/") {
       assert.ok(
@@ -105,8 +105,15 @@ for (const [path, title, content] of pages) {
       }
     }
     if (path === "/richiedi-un-progetto/") {
-      assert.ok(text.includes("il questionario non è ancora attivo."));
-      assert.ok(text.includes("Nessun dato è stato raccolto o generato."));
+      assert.ok(text.includes("Passaggio 1 di 4"));
+      assert.ok(text.includes("Intervento e immobile."));
+      assert.ok(document.includes('role="form"'));
+      assert.ok(document.includes('id="brief-characteristics"'));
+      assert.ok(document.includes('id="brief-surface"'));
+      assert.ok(document.includes("<noscript>"));
+      assert.ok(!document.includes('type="submit"'));
+    } else {
+      assert.ok(!/<(?:input|textarea|select)\b/.test(document));
     }
   });
 }
