@@ -53,3 +53,13 @@ non nuove funzionalità né contenuti implementati nella 4A.
 Nessun testo di prodotto, asset, CTA o layout è stato riscritto per applicare
 queste proposte. La milestone 4A corregge solo i difetti funzionali riprodotti.
 Eventuali arricchimenti richiedono una successiva attività concordata.
+
+## Riscontro della milestone 4B — 16 novembre 2026
+
+Attuate le priorità sulle tre schede: pianta distributiva di Corte 01,
+sezione esistente/innesti di Officina 02 e due configurazioni di Interno 03.
+Testi, annotazioni HTML e dichiarazioni concettuali accompagnano le nuove tavole.
+Studio ora rimanda alla pianta di Corte 01 come esempio concreto del metodo.
+Dettaglio e provenienza in [ASSETS.md](ASSETS.md); verifiche nel worklog.
+La tabella precedente resta la fotografia della 4A. Le altre proposte editoriali,
+incluse CTA e ulteriori esempi dei Servizi, non sono oggetto della 4B.

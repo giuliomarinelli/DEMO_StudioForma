@@ -219,3 +219,51 @@ valuta pseudo-elementi, gradienti, bordi dei controlli o tutti gli stati dinamic
 non sostituisce un audit WCAG. La copia positiva conferma writeText, non una
 rilettura degli appunti; verificare manualmente l'incolla nell'editor desiderato.
 Baseline rollback 4A: `698f1a1`; nessun rollback effettuato.
+
+## Verifica degli elaborati — milestone 4B
+
+Baseline di confronto e rollback: `ee22cf3`. Nessuna configurazione di hosting,
+dipendenza o comando di build cambia. Eseguire typecheck, lint, npm test e build
+con la procedura ordinaria; avviare solo il runtime locale del progetto e usare
+il test HTTP SSR già esistente. Non occorre Playwright né un test E2E.
+
+Verificare le tre schede con richieste dirette e controllare nell'HTML della
+prima risposta: id lettura-progettuale, problema/ipotesi/soluzione, figcaption,
+annotazioni, alt, aria-describedby e dichiarazione non in scala. Interno 03
+deve avere le due tavole 03.02 e 03.03. In Studio controllare il link
+/portfolio/corte-01/#lettura-progettuale. Non servono dati personali o credenziali.
+
+Per esaminare i vettoriali senza automazione browser, dalla radice del repository
+usare XML nativo PowerShell e Sharp già presente nella toolchain di Miniflare:
+
+```powershell
+$drawings = @('corte-01-pianta','officina-02-sezione','interno-03-aperto','interno-03-separato')
+foreach ($drawing in $drawings) {
+  $svg = [xml](Get-Content -LiteralPath "src/media/$drawing.svg" -Raw)
+  $svg.DocumentElement.GetAttribute('viewBox')
+}
+@'
+const fs = require('node:fs/promises');
+const path = require('node:path');
+const { createRequire } = require('node:module');
+const sharp = createRequire(path.resolve('node_modules/miniflare/package.json'))('sharp');
+const drawings = ['corte-01-pianta','officina-02-sezione','interno-03-aperto','interno-03-separato'];
+(async () => {
+  await fs.mkdir('.wrangler/qa-4b', { recursive: true });
+  for (const drawing of drawings) {
+    for (const width of [640, 280]) {
+      await sharp(await fs.readFile(`src/media/${drawing}.svg`))
+        .resize({ width }).png().toFile(`.wrangler/qa-4b/${drawing}-${width}.png`);
+    }
+  }
+})();
+'@ | node
+```
+
+Aprire le otto PNG locali per controllare geometrie, frecce e sovrapposizioni.
+Le immagini a 280 px simulano la riduzione del solo vettoriale, non il layout
+della pagina né un viewport browser. Le annotazioni lunghe si leggono in HTML.
+Questi passaggi non installano Sharp o librerie grafiche nell'applicazione.
+Per un successivo controllo manuale delle pagine, verificare soprattutto la
+disposizione in colonna sotto 800 px e il confronto delle due configurazioni;
+non interpretare la rasterizzazione come collaudo responsive completo.

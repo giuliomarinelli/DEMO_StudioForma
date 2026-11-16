@@ -619,3 +619,122 @@ Nessun intervento su browser o altri progetti. Commit e push sul solo branch cor
 con `git -c commit.gpgsign=false commit`, senza modificare la configurazione Git.
 Nessun merge, rebase, force push, deployment o modifica a servizi Cloudflare.
 Non avviate attività successive alla 4A.
+
+## 2026-11-16 — Milestone 4B: letture architettoniche dei progetti
+
+### Risultato e perimetro
+
+Consegnati quattro SVG originali nelle tre schede esistenti, con spiegazioni
+di problema, ipotesi e soluzione, didascalie e annotazioni HTML. Studio collega
+il metodo alla pianta di Corte 01 con un rimando puntuale. Nessuna nuova rotta,
+interazione, libreria grafica applicativa o modifica al generatore di brief.
+
+Letti AGENTS.md, MVP, BRAND_DIRECTION, CONTENT_AUDIT, dati dei progetti e worklog.
+Working tree inizialmente pulito. Branch corrente feature/mvp-foundation;
+HEAD e remoto coincidevano a `ee22cf3af9fa02bd1f4cbb99b550c360996ba89b`.
+Verificati con git status, rev-parse e ls-remote. Nessun subagente, worktree,
+nuovo branch, merge o rebase. AGENTS.md e docs/MVP.md preservati.
+
+### Elaborati e decisioni
+
+1. **Corte 01 / 01.02:** pianta schematica a U. Il percorso blu entra nel filtro
+   laterale, cambia direzione verso la corte e si dirama verso giorno e notte.
+   La diramazione tratteggiata distingue la stanza più interna. Le tre note
+   spiegano ingresso, centro distributivo e soglie; non sostituiscono uno studio
+   dimensionale o esecutivo.
+2. **Officina 02 / 02.02:** sezione trasversale con telaio a doppia falda in
+   grafite e nuovi laboratori blu tratteggiati. Il vuoto sopra i laboratori,
+   l'arretramento dai pilastri e la dorsale centrale esprimono conservazione,
+   separazione e inserimento. Il segno di distacco non è una quota misurata;
+   il telaio non costituisce una verifica strutturale.
+3. **Interno 03 / 03.02–03.03:** due piante con identici perimetro, nucleo e
+   arredi. I pannelli raccolti aprono la relazione tra comune e lavoro;
+   distesi ne segnano il limite. Frecce e tratteggio distinguono movimento e uso.
+   Nessuna promessa di isolamento acustico o prestazione certificata.
+4. Esteso il modello Project con study tipizzato: motivazioni, tavole e note.
+   ProjectDetail mantiene contenuti e immagini introduttive, aggiungendo una
+   section con dl e figure/figcaption. La numerazione della materia passa a 04.
+   Nessun nuovo livello architetturale o stato client.
+5. Layout circoscritto ai nuovi elaborati: disegno/didascalia affiancati per le
+   tavole singole, confronto a due colonne per Interno; una colonna sotto 800 px.
+   SVG con dimensioni intrinseche, alt specifico e aria-describedby alla didascalia.
+   Le annotazioni estese sono testo HTML leggibile, anche quando il disegno
+   viene ridotto su mobile. Ogni SVG ha inoltre title/desc per uso autonomo.
+6. Studio aggiunge un solo esempio sintetico e link a
+   /portfolio/corte-01/#lettura-progettuale, senza duplicare la scheda.
+7. Provenienza, inventario e limiti in ASSETS.md. Aggiornati README, ARCHITECTURE,
+   CASE_STUDY, DEPLOYMENT e il riscontro dell'audit contenuti. Le altre proposte
+   della 4A non vengono implementate in questa milestone.
+
+Tutti gli elaborati mantengono grafite, cemento, blu tecnico e griglie. Progetti
+concettuali, fittizi e non realizzati; schemi non in scala, misure e superfici
+ipotetiche. Nessuna prestazione tecnica certificata. Sorgenti originali disegnati
+nel repository, senza asset o font remoti; dipendenze e lockfile invariati.
+
+### Verifiche effettivamente eseguite
+
+Baseline locale Node/npm del progetto, dipendenze già installate. Dalla radice:
+
+```powershell
+npm run fmt
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npm run fmt.check
+npm run serve
+npm run test.ssr
+git diff --check
+```
+
+| Controllo | Esito |
+| --- | --- |
+| Typecheck TypeScript strict | Superato |
+| Lint Qwik | Superato, senza warning |
+| Test locali esistenti | 27 superati in 3 file, inclusa regressione del brief |
+| Build | Superata, client e server SSR dell'adapter ufficiale |
+| Formattazione | Superata |
+| HTTP SSR esistente | 11 controlli superati sulle nove rotte, artefatti e 404 |
+| Contenuti 4B nelle risposte dirette | HTTP 200, nuove figure 1/1/2 nelle tre schede; altrettante associazioni aria-describedby, testi e dichiarazione presenti senza eseguire JS |
+| Rimando Studio | Link alla nuova ancora Corte 01 presente nell'HTML SSR |
+| Asset della build | Tutti e quattro i payload SVG delle immagini SSR coincidono byte per byte con i sorgenti finali |
+| SVG XML | Quattro documenti validi, viewBox 0 0 640 600, title/desc presenti |
+| Ispezione dei vettoriali | Rasterizzazioni locali a 640 e 280 px dei quattro SVG esaminate visivamente |
+| Browser / E2E | Non eseguiti, come richiesto; nessuna chiamata Playwright MCP e nessun nuovo test E2E |
+
+La verifica visuale ha rilevato sovrapposizioni iniziali di scritte con arredi e
+travi: spostate le etichette e la diramazione tratteggiata di Corte 01, separato
+il titolo del telaio dalla struttura di Officina. Aggiunta la stessa apertura
+del nucleo nelle due piante di Interno e uniformata la lunghezza rappresentata
+dei pannelli raccolti. Riesaminate le rasterizzazioni dopo le correzioni; la
+build e i controlli HTTP usano gli SVG finali, verificati anche nei payload.
+
+La rasterizzazione usa Sharp già installato nella toolchain di Miniflare,
+solo come strumento locale di verifica. Non viene introdotto nell'app. Le otto
+PNG e lo script temporaneo sono nella directory ignorata .wrangler/qa-4b;
+procedura autonoma di riproduzione in DEPLOYMENT. Non sono screenshot del sito
+e non dimostrano la resa delle pagine nei viewport browser.
+
+Wrangler avviato soltanto dopo la build, su 127.0.0.1:8794 tramite lo script
+serve esistente. Prima dell'avvio non risultavano listener né CLI Pages di
+questo repository. Identificati i processi creati (root Node 60808, CLI 57568)
+e arrestato solo il loro albero dopo i controlli. Nessun browser condiviso o
+processo di altri progetti modificato. Nessun binding remoto o servizio Cloudflare
+utilizzato o modificato; nessun deployment.
+Confermato il rilascio della porta 8794 dopo la chiusura.
+
+Durante i controlli finali il lanciatore shell ha restituito CreateProcess /
+Accesso negato prima dell'esecuzione. Completati i controlli Git e la consegna
+invocando direttamente la CLI Git da Node locale, con gli stessi argomenti e
+directory di lavoro; nessuna modifica a permessi o configurazioni di sistema.
+I comandi Git restano riproducibili da un normale terminale nel repository.
+
+### Limiti, riproduzione e chiusura
+
+Un eventuale collaudo manuale delle nuove pagine nel browser rimane distinto
+dal controllo dei vettoriali: in questa milestone non viene attestato. I limiti
+storici della 4A e gli advisory già documentati non sono riaperti né dichiarati
+risolti. Nessuna modifica alla logica del questionario, al routing o all'adapter.
+Baseline per confronto/rollback: ee22cf3; non eseguiti rollback o riscritture.
+Commit e push sul solo branch esistente, GPG signing disattivato nel singolo
+comando commit. Consegna limitata alla 4B; nessuna attività successiva avviata.

@@ -837,6 +837,126 @@
     gap: 30px;
     padding-block: 40px 55px;
   }
+  .project-study {
+    padding-block: 55px 60px;
+    border-bottom: 1px solid #171c2040;
+    scroll-margin-top: 30px;
+  }
+  .project-study .section-heading > h2 {
+    flex-basis: 66%;
+  }
+  .study-reasoning {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-block: 35px 45px;
+  }
+  .study-reasoning dt {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--color-blue);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .study-reasoning dd,
+  .study-annotations p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #46515a;
+    overflow-wrap: anywhere;
+  }
+  .study-figure {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(25px, 4vw, 60px);
+    align-items: start;
+    margin: 0;
+  }
+  .study-figure > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #171c2040;
+  }
+  .study-figure figcaption > h3 {
+    font-size: clamp(24px, 2.5vw, 34px);
+    margin-block: 20px 15px;
+  }
+  .study-annotations {
+    list-style: none;
+    margin-top: 28px;
+    padding: 0;
+  }
+  .study-annotations li {
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 16px;
+    padding-block: 18px;
+    border-top: 1px solid #171c2040;
+  }
+  .study-marker {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--color-blue);
+    color: var(--color-blue);
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+  .study-annotations h4 {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+  .study-drawings-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+  .study-drawings-pair .study-figure {
+    display: block;
+  }
+  .study-drawings-pair figcaption {
+    padding-top: 24px;
+  }
+  .method-example {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    border-top: 1px solid #171c2040;
+    margin-top: 40px;
+    padding-top: 30px;
+  }
+  .method-example h3 {
+    font-size: 25px;
+    margin-bottom: 14px;
+  }
+  .method-example .text-link {
+    margin-top: 20px;
+  }
+  @media (max-width: 800px) {
+    .study-figure,
+    .study-drawings-pair,
+    .study-reasoning,
+    .method-example {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .study-figure > img {
+      max-width: 640px;
+      margin-inline: auto;
+    }
+    .study-drawings-pair {
+      gap: 40px;
+    }
+    .study-reasoning {
+      gap: 24px;
+      margin-block: 30px;
+    }
+    .method-example {
+      gap: 20px;
+    }
+  }
   .project-next a {
     display: flex;
     align-items: center;

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="600" viewBox="0 0 640 600" role="img" aria-labelledby="title description">
+  <title id="title">Officina 02 — conservare il telaio, inserire i volumi</title>
+  <desc id="description">Sezione trasversale concettuale: il telaio a doppia falda esistente è in grafite; due nuovi laboratori bassi, blu e tratteggiati, restano separati da pilastri e copertura. Al centro rimane la dorsale comune, rappresentata in sezione. Numeri 01 struttura conservata, 02 distacco superiore, 03 nuovi elementi. Schema non in scala, senza verifiche strutturali.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#86919A" stroke-opacity=".2"/></pattern>
+    <pattern id="infill" width="12" height="12" patternUnits="userSpaceOnUse"><path d="m-3 3 6-6M0 12 12 0m-3 15 6-6" stroke="#2F59C4" stroke-opacity=".3"/></pattern>
+  </defs>
+  <path fill="#EAE9E4" d="M0 0h640v600H0z"/><path fill="url(#grid)" d="M0 0h640v600H0z"/>
+  <g fill="none" stroke="#86919A"><path d="M24 50V24h26m540 0h26v26M24 550v26h26m540 0h26v-26"/><path d="M320 84v402" stroke-dasharray="5 7"/></g>
+  <g fill="#46515A" font-family="Arial, sans-serif" font-size="16" letter-spacing="1.6"><text x="40" y="58">SF / 02.02</text><text x="40" y="558">SEZIONE / SCHEMA NON IN SCALA</text></g>
+  <path d="M72 446V242L320 120l248 122v204h-12V250L320 134 84 250v196Z" fill="#171C20"/>
+  <g stroke="#171C20" fill="none" stroke-width="3"><path d="m84 264 236-116 236 116M84 264h472M136 238l36 26 36-62 40 62 36-99 36 99 36-99 36 99 40-62 36 62 36-26"/><path d="M52 446h536" stroke-width="8"/></g>
+  <g fill="#2F59C4" fill-opacity=".1" stroke="#2F59C4" stroke-width="4"><path d="M110 342h144v100H110zM386 342h144v100H386z"/></g>
+  <path d="M110 342h144v100H110zM386 342h144v100H386z" fill="url(#infill)"/>
+  <g stroke="#2F59C4" stroke-width="2" fill="none"><path d="M278 270v66m-9-66h18m-18 66h18"/><path d="M182 342v-26h-38M458 442v43"/></g>
+  <g font-family="Arial, sans-serif" text-anchor="middle"><text x="320" y="100" fill="#171C20" font-size="30">TELAIO</text><text x="363" y="310" fill="#46515A" font-size="28">VUOTO</text><text x="182" y="403" fill="#24469E" font-size="28">LAB</text><text x="458" y="403" fill="#24469E" font-size="28">LAB</text></g>
+  <g stroke="#2F59C4" stroke-width="3" fill="none"><circle cx="320" cy="407" r="19"/><path d="M320 379v56m-28-28h56"/></g>
+  <g fill="#EAE9E4" stroke="#2F59C4" stroke-width="2"><circle cx="100" cy="163" r="25"/><circle cx="232" cy="302" r="25"/><circle cx="458" cy="510" r="25"/></g>
+  <path d="m119 180 30 26" stroke="#2F59C4" stroke-width="2"/>
+  <g fill="#2F59C4" font-family="Arial, sans-serif" font-size="26" text-anchor="middle"><text x="100" y="172">01</text><text x="232" y="311">02</text><text x="458" y="519">03</text></g>
+</svg>

@@ -96,8 +96,77 @@ export const ProjectDetail = component$<{ project: Project; next: Project }>(
             ))}
           </ol>
         </section>
+        <section
+          class="project-study"
+          id="lettura-progettuale"
+          aria-labelledby="study-title"
+        >
+          <div class="section-heading">
+            <p class="eyebrow">03 / Lettura progettuale</p>
+            <h2 id="study-title">{project.study.title}</h2>
+          </div>
+          <dl class="study-reasoning">
+            <div>
+              <dt>Problema</dt>
+              <dd>{project.study.problem}</dd>
+            </div>
+            <div>
+              <dt>Ipotesi</dt>
+              <dd>{project.study.hypothesis}</dd>
+            </div>
+            <div>
+              <dt>Soluzione nello schema</dt>
+              <dd>{project.study.solution}</dd>
+            </div>
+          </dl>
+          <div
+            class={[
+              "study-drawings",
+              { "study-drawings-pair": project.study.drawings.length > 1 },
+            ]}
+          >
+            {project.study.drawings.map((drawing, index) => (
+              <figure class="study-figure" key={drawing.number}>
+                <img
+                  src={drawing.asset}
+                  width="640"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt={drawing.alt}
+                  aria-describedby={`study-caption-${index}`}
+                />
+                <figcaption id={`study-caption-${index}`}>
+                  <p class="eyebrow">
+                    Tavola {drawing.number} / Schema non in scala
+                  </p>
+                  <h3>{drawing.title}</h3>
+                  <p class="body-copy">{drawing.description}</p>
+                  <ol class="study-annotations">
+                    {drawing.annotations.map((annotation) => (
+                      <li key={annotation.number}>
+                        <span class="study-marker" aria-hidden="true">
+                          {annotation.number}
+                        </span>
+                        <div>
+                          <h4>{annotation.title}</h4>
+                          <p>{annotation.text}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <p class="project-disclaimer">
+            Elaborati concettuali originali. Progetto fittizio e non realizzato;
+            schemi non in scala, misure e superfici ipotetiche. Nessuna
+            prestazione tecnica certificata.
+          </p>
+        </section>
         <section class="editorial-section" aria-labelledby="materials-title">
-          <p class="eyebrow">03 / Materia</p>
+          <p class="eyebrow">04 / Materia</p>
           <div>
             <h2 id="materials-title">Materiali e carattere.</h2>
             <p class="body-copy">{project.materials}</p>

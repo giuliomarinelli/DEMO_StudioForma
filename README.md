@@ -1,7 +1,8 @@
 # Studio Forma
 
-Demo di uno studio di architettura fittizio. Milestone 4A: collaudo del generatore di brief
-architettonici, identità grafite/cemento/blu e tre schede di progetto concettuale.
+Demo di uno studio di architettura fittizio. Milestone 4B: approfondimenti delle
+tre schede con pianta della corte, sezione dell'officina e due configurazioni
+dell'interno. Identità grafite/cemento/blu e generatore locale di brief architettonici.
 Studio, contenuti e operazioni sono simulati; nessuna richiesta viene inviata.
 
 ## Avvio locale
@@ -63,7 +64,8 @@ HTTP; il menu mobile usa stato Qwik e supporta Escape.
 
 Homepage tipografica con tavola architettonica, tre SVG originali e pagine complete.
 Corte 01, Officina 02 e Interno 03 presentano contesto, superficie ipotetica,
-programma, domanda, criteri e materiali. Il questionario raccoglie intervento,
+programma, domanda, criteri, materiali e tavole annotate con descrizioni HTML.
+Studio collega il metodo a un esempio di Corte 01. Il questionario raccoglie intervento,
 immobile, superficie, obiettivi, stile, budget facoltativo, tempi e descrizione.
 Riepilogo modificabile, documento strutturato, copia e ripristino con conferma.
 Nessun contatto operativo, dato personale richiesto o invio reale.
@@ -85,6 +87,7 @@ o accessibilità né una pubblicazione remota.
 - [MVP e criteri di accettazione](docs/MVP.md)
 - [Direzione del brand, palette e voce editoriale](docs/BRAND_DIRECTION.md)
 - [Architettura, rendering, asset e licenze](docs/ARCHITECTURE.md)
+- [Inventario e lettura delle tavole originali](docs/ASSETS.md)
 - [Comandi, artefatti, riproduzione e rollback](docs/DEPLOYMENT.md)
 - [Decisioni, operazioni e risultati delle verifiche](docs/WORKLOG.md)
 - [Caso studio e attività residue](docs/CASE_STUDY.md)

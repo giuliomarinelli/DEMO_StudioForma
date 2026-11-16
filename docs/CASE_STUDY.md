@@ -8,6 +8,8 @@ Qwik City SSR e la struttura del sito. La milestone 2 completa identità e conte
 La milestone 3 aggiunge il generatore di brief, con stato locale e nessun invio.
 La milestone 4A collauda la build SSR nel runtime Cloudflare locale e corregge
 focus del questionario e testo del pulsante di conferma in modifica.
+La milestone 4B approfondisce le tre presentazioni con elaborati originali e
+letture progettuali, senza modificare il generatore o introdurre interazioni.
 
 ## Evoluzione dell'identità
 
@@ -37,6 +39,30 @@ progetti sono concettuali, fittizi e non realizzati. Le tre tavole SVG sono
 originali e incluse nel repository, senza immagini o font remoti.
 
 ## Contenuti e richiesta preliminare
+
+### Approfondimenti della milestone 4B
+
+Le schede conservano le tavole introduttive e aggiungono una lettura distinta
+del rapporto tra problema, ipotesi e soluzione nello schema:
+
+- Corte 01: una pianta a U segue il passaggio dall'ingresso laterale alla corte
+  e alle soglie degli ambienti. Le frecce distinguono la sequenza d'arrivo dalle
+  diramazioni verso lo spazio giorno e l'ala privata.
+- Officina 02: una sezione trasversale sovrappone telaio conservato e laboratori
+  nuovi. Grafite, blu e tratteggio distinguono le parti; il vuoto superiore e
+  l'arretramento dai pilastri mostrano il criterio di autonomia degli innesti.
+- Interno 03: due piante con identici nucleo e arredi confrontano pannelli raccolti
+  e distesi. Cambia la relazione fra studio e spazio comune, senza attribuire
+  alla partizione prestazioni acustiche o costruttive non verificate.
+
+Titoli, annotazioni numerate e descrizioni sono disponibili anche in HTML.
+Le figure si dispongono in colonna su schermi stretti; il confronto dell'interno
+è affiancato su desktop. Un breve rimando nella pagina Studio collega il metodo
+alla pianta di Corte 01 senza ripeterne l'intera spiegazione.
+Progetti fittizi e non realizzati, schemi non in scala e misure ipotetiche sono
+dichiarati accanto agli elaborati. Provenienza e fonti in [ASSETS.md](ASSETS.md).
+
+### Percorso locale di richiesta
 
 Studio presenta pratica, metodo e criteri. Servizi esplicita ambiti ed elaborati
 concettuali con collegamenti ai progetti. Contatti fornisce orientamento e FAQ,
@@ -80,10 +106,17 @@ deploy remoto, prestazioni misurate, Safari/Firefox o conformità WCAG completa.
 
 ## Attività residue
 
+Verifiche della 4B: typecheck, lint, 27 test locali e build di produzione
+superati; 11 controlli HTTP SSR esistenti superati nel runtime locale Wrangler.
+Nelle tre risposte HTML sono presenti quattro nuove figure complessive, con
+annotazioni e descrizioni accessibili. Gli SVG della build coincidono con i
+sorgenti. Controllati XML e rasterizzazioni a 640/280 px; nessun Playwright MCP,
+nuovo test E2E o collaudo browser delle pagine eseguito nella 4B.
+
 Prove disponibili della 4A concluse; resta non conclusivo il click automatizzato
 su Copia a 320 px per attesa di stabilità, mentre la copia da tastiera riesce.
-Restano inoltre prove assistive con screen reader e browser diversi,
-eventuale arricchimento delle tavole e armonizzazione editoriale delle CTA:
+La 4B consegna l'arricchimento delle tavole proposto nell'audit. Restano prove
+assistive con screen reader e browser diversi e armonizzazione editoriale delle CTA:
 [CONTENT_AUDIT.md](CONTENT_AUDIT.md). Gli advisory sono ancora presenti, con catene
 e rilevanza documentate in [DEPENDENCY_AUDIT.md](DEPENDENCY_AUDIT.md).
 Nessun aggiornamento forzato, pubblicazione o avvio automatico di ulteriori milestone.

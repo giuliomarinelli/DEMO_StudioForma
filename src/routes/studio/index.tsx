@@ -63,6 +63,26 @@ export default component$(() => (
             </li>
           ))}
         </ol>
+        <aside class="method-example" aria-labelledby="method-example-title">
+          <p class="eyebrow">Il metodo, in una tavola</p>
+          <div>
+            <h3 id="method-example-title">
+              Corte 01 / Dalla soglia alla distribuzione.
+            </h3>
+            <p class="body-copy">
+              La pianta segue un ingresso che cambia direzione prima di aprirsi
+              sulla corte. È un esempio di come una relazione d'uso diventa una
+              scelta rappresentabile.
+            </p>
+            <a
+              href="/portfolio/corte-01/#lettura-progettuale"
+              class="text-link"
+            >
+              Leggi la sequenza nella pianta di Corte 01
+              <Arrow />
+            </a>
+          </div>
+        </aside>
       </div>
     </section>
     <section class="shell editorial-section" aria-labelledby="principles-title">

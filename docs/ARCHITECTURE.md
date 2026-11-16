@@ -1,11 +1,13 @@
 # Architettura — Studio Forma
 
-## Perimetro dopo la milestone 4A
+## Perimetro dopo la milestone 4B
 
 Applicazione Qwik City con rendering server a ogni richiesta alle pagine pubbliche.
 Lo studio, i tre progetti concettuali e i servizi sono fittizi. La milestone 2
 ha completato contenuti, portfolio e identità visiva; la milestone 3 aggiunge
 il generatore interattivo di brief con stato locale.
+La milestone 4B arricchisce le schede con quattro tavole vettoriali annotate e
+collega Studio alla lettura distributiva di Corte 01, senza nuove interazioni.
 Non esistono database, autenticazione, CMS, invii o API
 business. Le Pages Functions sono esclusivamente il runtime del rendering SSR.
 
@@ -106,6 +108,21 @@ versionati; non richiedono attribuzioni esterne. I font sono quelli di sistema,
 senza download. Lo scaffold deriva dal progetto Qwik, distribuito con licenza MIT;
 le licenze delle dipendenze restano nei rispettivi pacchetti npm. Non viene
 attribuita automaticamente una licenza generale all'intero repository.
+
+La milestone 4B aggiunge corte-01-pianta.svg, officina-02-sezione.svg,
+interno-03-aperto.svg e interno-03-separato.svg. Inventario, provenienza e limiti
+in [ASSETS.md](ASSETS.md). Le tavole precedenti restano in apertura delle schede.
+La proprietà tipizzata study di Project raccoglie problema, ipotesi, soluzione,
+immagini e annotazioni. ProjectDetail la rende con section, dl, figure/figcaption
+e liste; img ha alt e aria-describedby. Non è introdotto un renderer grafico,
+un modello di stato o una nuova astrazione UI.
+
+Le tavole singole affiancano disegno e didascalia su desktop; le configurazioni
+di Interno 03 sono affiancate per confronto. Sotto 800 px entrambi i layout si
+dispongono in una colonna. Le annotazioni restano HTML leggibile; le dimensioni
+intrinseche degli SVG riservano lo spazio prima del caricamento lazy.
+L'ancora #lettura-progettuale permette il rimando puntuale dalla pagina Studio.
+Routing, adapter, componenti del brief e relative validazioni sono invariati.
 
 ## Contenuti e identità della milestone 2
 
