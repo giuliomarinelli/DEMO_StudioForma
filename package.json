@@ -1,0 +1,47 @@
+{
+  "name": "studio-forma-demo",
+  "description": "Demo di architettura in Qwik City SSR per Cloudflare Pages",
+  "engines": {
+    "node": ">=22.16.0"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.server": "qwik check-client src dist && vite build -c adapters/cloudflare-pages/vite.config.ts",
+    "build.types": "tsc --incremental --noEmit",
+    "dev": "vite --mode ssr",
+    "fmt": "prettier --write src adapters tests *.config.* package.json tsconfig.json",
+    "fmt.check": "prettier --check src adapters tests *.config.* package.json tsconfig.json",
+    "lint": "eslint src adapters vite.config.ts --max-warnings 0",
+    "preview": "npm run serve",
+    "serve": "wrangler pages dev ./dist --ip 127.0.0.1 --port 8794 --compatibility-date=2026-11-15 --compatibility-flags=nodejs_als",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test.ssr": "node --test tests/ssr.test.mjs"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "^1.20.4",
+    "@builder.io/qwik-city": "^1.20.4",
+    "@eslint/js": "^9",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/node": "20.19.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-qwik": "^1.20.4",
+    "globals": "16.4.0",
+    "prettier": "3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.1.4",
+    "typescript": "5.4.5",
+    "typescript-eslint": "8.72.2",
+    "undici": "*",
+    "vite": "7.3.7",
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "4.1.12",
+    "wrangler": "4.162.0"
+  },
+  "packageManager": "npm@10.9.2"
+}

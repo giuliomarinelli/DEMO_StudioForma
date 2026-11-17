@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="600" viewBox="0 0 640 600" role="img" aria-labelledby="title description">
+  <title id="title">Interno 03 — configurazione aperta</title>
+  <desc id="description">Pianta concettuale: notte a sinistra, nucleo dei servizi al centro, lavoro in alto a destra e spazio comune in basso. I pannelli scorrevoli sono raccolti a destra; una freccia attraversa il varco fra comune e lavoro. Il nucleo e gli arredi restano fissi. Progetto fittizio non realizzato, schema non in scala.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#86919A" stroke-opacity=".2"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="#2F59C4" stroke-width="1.8"/></marker>
+  </defs>
+  <path fill="#EAE9E4" d="M0 0h640v600H0z"/><path fill="url(#grid)" d="M0 0h640v600H0z"/>
+  <g fill="none" stroke="#86919A"><path d="M24 50V24h26m540 0h26v26M24 550v26h26m540 0h26v-26"/><path d="M40 112h560M40 478h560" stroke-dasharray="4 8"/></g>
+  <g fill="#46515A" font-family="Arial, sans-serif" font-size="16" letter-spacing="1.6"><text x="40" y="58">SF / 03.02 — APERTO</text><text x="40" y="558">PIANTA / SCHEMA NON IN SCALA</text></g>
+  <path d="M64 136h512v320H64Z" fill="#F3F2EE" stroke="#171C20" stroke-width="7"/>
+  <path d="M392 140h180v312H392Z" fill="#2F59C4" fill-opacity=".08"/>
+  <path d="M248 240h144v104H248Z" fill="#86919A" fill-opacity=".2" stroke="#171C20" stroke-width="5"/>
+  <path d="M290 344h38" stroke="#F3F2EE" stroke-width="9"/>
+  <path d="M248 136v104m0 104v112M64 320h130M392 136v104m0 104v112" fill="none" stroke="#171C20" stroke-width="5"/>
+  <g fill="none" stroke="#46515A" stroke-width="2"><path d="M92 166h104v108H92zM100 174h40v24h-40zm48 0h40v24h-40zM438 170h104v42H438zM452 218h77M90 372h104v42H90zM100 426h84"/><circle cx="320" cy="401" r="28"/></g>
+  <path d="M392 320h176" fill="none" stroke="#2F59C4" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M478 313h88v14h-88Z" fill="#2F59C4"/><path d="M486 307h80" stroke="#2F59C4" stroke-width="3"/>
+  <g fill="none" stroke="#2F59C4" marker-end="url(#arrow)"><path d="M456 398V259" stroke-width="5"/><path d="M416 350h50" stroke-width="2"/></g>
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#171C20"><text x="154" y="306" font-size="26">NOTTE</text><text x="484" y="249" font-size="26">LAVORO</text><text x="320" y="298" font-size="26">NUCLEO</text><text x="320" y="504" font-size="30">COMUNE</text></g>
+  <g fill="#EAE9E4" stroke="#2F59C4" stroke-width="2"><circle cx="534" cy="362" r="23"/></g><text x="534" y="371" fill="#2F59C4" font-family="Arial, sans-serif" font-size="26" text-anchor="middle">01</text>
+</svg>

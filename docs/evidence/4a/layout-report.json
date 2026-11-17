@@ -1,0 +1,348 @@
+{
+  "status": "passed",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "menus": [
+    {
+      "width": 768,
+      "first": "Home",
+      "escapeFocus": true,
+      "destination": "http://127.0.0.1:8794/servizi/"
+    },
+    {
+      "width": 390,
+      "first": "Home",
+      "escapeFocus": true,
+      "destination": "http://127.0.0.1:8794/servizi/"
+    },
+    {
+      "width": 320,
+      "first": "Home",
+      "escapeFocus": true,
+      "destination": "http://127.0.0.1:8794/servizi/"
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "width": 1440,
+      "contrast": {
+        "count": 77,
+        "fails": []
+      }
+    },
+    {
+      "path": "/studio/",
+      "width": 1440,
+      "contrast": {
+        "count": 54,
+        "fails": []
+      }
+    },
+    {
+      "path": "/servizi/",
+      "width": 1440,
+      "contrast": {
+        "count": 58,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/",
+      "width": 1440,
+      "contrast": {
+        "count": 50,
+        "fails": []
+      }
+    },
+    {
+      "path": "/contatti/",
+      "width": 1440,
+      "contrast": {
+        "count": 49,
+        "fails": []
+      }
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "width": 1440,
+      "contrast": {
+        "count": 65,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "width": 1440,
+      "contrast": {
+        "count": 63,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/officina-02/",
+      "width": 1440,
+      "contrast": {
+        "count": 63,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/interno-03/",
+      "width": 1440,
+      "contrast": {
+        "count": 63,
+        "fails": []
+      }
+    },
+    {
+      "path": "/pagina-inesistente/",
+      "width": 1440,
+      "contrast": {
+        "count": 30,
+        "fails": []
+      }
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "contrast": {
+        "count": 72,
+        "fails": []
+      }
+    },
+    {
+      "path": "/studio/",
+      "width": 768,
+      "contrast": {
+        "count": 50,
+        "fails": []
+      }
+    },
+    {
+      "path": "/servizi/",
+      "width": 768,
+      "contrast": {
+        "count": 54,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/",
+      "width": 768,
+      "contrast": {
+        "count": 46,
+        "fails": []
+      }
+    },
+    {
+      "path": "/contatti/",
+      "width": 768,
+      "contrast": {
+        "count": 45,
+        "fails": []
+      }
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "width": 768,
+      "contrast": {
+        "count": 60,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "width": 768,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/officina-02/",
+      "width": 768,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/interno-03/",
+      "width": 768,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/pagina-inesistente/",
+      "width": 768,
+      "contrast": {
+        "count": 26,
+        "fails": []
+      }
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "contrast": {
+        "count": 72,
+        "fails": []
+      }
+    },
+    {
+      "path": "/studio/",
+      "width": 390,
+      "contrast": {
+        "count": 50,
+        "fails": []
+      }
+    },
+    {
+      "path": "/servizi/",
+      "width": 390,
+      "contrast": {
+        "count": 54,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/",
+      "width": 390,
+      "contrast": {
+        "count": 46,
+        "fails": []
+      }
+    },
+    {
+      "path": "/contatti/",
+      "width": 390,
+      "contrast": {
+        "count": 45,
+        "fails": []
+      }
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "width": 390,
+      "contrast": {
+        "count": 60,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "width": 390,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/officina-02/",
+      "width": 390,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/interno-03/",
+      "width": 390,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/pagina-inesistente/",
+      "width": 390,
+      "contrast": {
+        "count": 26,
+        "fails": []
+      }
+    },
+    {
+      "path": "/",
+      "width": 320,
+      "contrast": {
+        "count": 72,
+        "fails": []
+      }
+    },
+    {
+      "path": "/studio/",
+      "width": 320,
+      "contrast": {
+        "count": 50,
+        "fails": []
+      }
+    },
+    {
+      "path": "/servizi/",
+      "width": 320,
+      "contrast": {
+        "count": 54,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/",
+      "width": 320,
+      "contrast": {
+        "count": 46,
+        "fails": []
+      }
+    },
+    {
+      "path": "/contatti/",
+      "width": 320,
+      "contrast": {
+        "count": 45,
+        "fails": []
+      }
+    },
+    {
+      "path": "/richiedi-un-progetto/",
+      "width": 320,
+      "contrast": {
+        "count": 60,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/corte-01/",
+      "width": 320,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/officina-02/",
+      "width": 320,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/portfolio/interno-03/",
+      "width": 320,
+      "contrast": {
+        "count": 59,
+        "fails": []
+      }
+    },
+    {
+      "path": "/pagina-inesistente/",
+      "width": 320,
+      "contrast": {
+        "count": 26,
+        "fails": []
+      }
+    }
+  ],
+  "contrastFailures": [],
+  "faq": true
+}
