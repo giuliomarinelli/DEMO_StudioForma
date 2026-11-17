@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="600" viewBox="0 0 640 600" role="img" aria-labelledby="title description">
+  <title id="title">Corte 01 — ingresso, corte e ambienti</title>
+  <desc id="description">Pianta concettuale a U. Il percorso blu entra dal filtro nell'ala sinistra, raggiunge la corte e si dirama verso lo spazio giorno superiore e gli ambienti privati a destra. Numeri 01 ingresso, 02 corte distributiva, 03 soglie degli ambienti. Schema non in scala di un progetto fittizio non realizzato.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#86919A" stroke-opacity=".2"/></pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="m1 1 7 4-7 4" fill="none" stroke="#2F59C4" stroke-width="1.8"/></marker>
+  </defs>
+  <path fill="#EAE9E4" d="M0 0h640v600H0z"/>
+  <path fill="url(#grid)" d="M0 0h640v600H0z"/>
+  <g fill="none" stroke="#86919A"><path d="M24 50V24h26m540 0h26v26M24 550v26h26m540 0h26v-26"/><path d="M56 80h528M56 466h528" stroke-dasharray="4 8"/></g>
+  <g fill="#46515A" font-family="Arial, sans-serif" font-size="16" letter-spacing="1.6"><text x="40" y="58">SF / 01.02</text><text x="40" y="558">PIANTA / SCHEMA NON IN SCALA</text></g>
+  <path d="M80 112h480v338H424V238H216v212H80Z" fill="#F3F2EE" stroke="#171C20" stroke-width="8" stroke-linejoin="miter"/>
+  <path d="M84 116h472v118H84Z" fill="#2F59C4" fill-opacity=".08"/>
+  <path d="M216 238h208v212H216z" fill="#2F59C4" fill-opacity=".12"/>
+  <g stroke="#171C20" stroke-width="5" fill="none"><path d="M80 238h136M424 338h136M216 112v126M424 112v126"/><path d="M100 150h80v45h-80zM462 252h66v24h-66zM462 354h66v24h-66z" stroke-width="2"/></g>
+  <g stroke="#F3F2EE" stroke-width="12"><path d="M128 450h49M216 266v48M296 238h48M424 276v35M424 366v35"/></g>
+  <g fill="none" stroke="#2F59C4" stroke-width="5" marker-end="url(#arrow)"><path d="M152 510V290h148"/><path d="M320 292v-80"/><path d="M340 290h106"/><path d="M398 290v94h48" stroke-dasharray="7 7"/></g>
+  <g fill="#171C20" font-family="Arial, sans-serif" font-size="30" text-anchor="middle"><text x="320" y="182">GIORNO</text><text x="320" y="363">CORTE</text></g>
+  <g fill="#46515A" font-family="Arial, sans-serif" font-size="24" text-anchor="middle"><text x="150" y="370" transform="rotate(-90 150 370)">FILTRO</text><text x="495" y="326">NOTTE</text><text x="495" y="421">NOTTE</text></g>
+  <g fill="#EAE9E4" stroke="#2F59C4" stroke-width="2"><circle cx="104" cy="504" r="25"/><circle cx="320" cy="410" r="25"/><circle cx="494" cy="490" r="25"/></g>
+  <g fill="#2F59C4" font-family="Arial, sans-serif" font-size="26" text-anchor="middle"><text x="104" y="513">01</text><text x="320" y="419">02</text><text x="494" y="499">03</text></g>
+  <path d="M494 465v-28" fill="none" stroke="#2F59C4" stroke-width="2"/>
+</svg>
