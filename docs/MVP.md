@@ -22,7 +22,7 @@ Navigazione responsive; almeno tre schede progetto fittizie; questionario funzio
 
 ## Requisito architetturale vincolante: SSR
 - Framework: Qwik + Qwik City; TypeScript strict, Tailwind CSS.
-- Cloudflare Pages con adapter Qwik City `cloudflare-pages` e SSR tramite Pages Functions; Vite è solo la toolchain interna al progetto Qwik.
+- Cloudflare Pages con adapter Qwik City `cloudflare-pages` e SSR tramite Pages Functions; Vite è solo la toolchain interna al progetto Qwik. 
 - L'HTML della prima risposta, incluse le rotte interne, deve contenere il contenuto significativo della pagina anche senza eseguire JavaScript nel browser.
 - Impostare metadati SEO per le pagine e verificare la build SSR con richiesta HTTP diretta a una rotta interna in ambiente compatibile con Pages.
 - Dati applicativi dimostrativi locali; nessun database o backend business separato. Le funzioni serverless dell'adapter SSR sono ammesse.
